@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:test_flutter/assets/themes/themes.dart';
+import 'package:test_flutter/features/platform/factory/material_widgets_factory.dart';
 import 'package:test_flutter/features/platform/factory/platform_widget_factory.dart';
 import 'package:test_flutter/features/router/app_router.dart';
 
@@ -20,10 +21,11 @@ class _AppState extends State<App> {
   Widget build(BuildContext context) {
     return MaterialApp(
       initialRoute: AppRouter.root,
-      onGenerateRoute: null,
-      localizationsDelegates: null,
-      supportedLocales: const [Locale('ru', 'RU')],
-      locale: const Locale('ru'),
+      onGenerateRoute: (settings) =>
+          AppRouter.generateRoute(settings, MaterialWidgetsFactory()),
+      // localizationsDelegates: null,
+      //  supportedLocales: const [Locale('ru', 'RU')],
+      //  locale: const Locale('ru'),
       theme: AppTheme.lightTheme,
       darkTheme: AppTheme.darkTheme,
     );

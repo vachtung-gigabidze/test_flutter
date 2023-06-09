@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
 import 'package:test_flutter/features/platform/factory/platform_widget_factory.dart';
 import 'package:test_flutter/features/platform/widgets/material_widgets.dart';
 
@@ -40,10 +39,8 @@ class MaterialWidgetsFactory implements PlatformWidgetsFactory {
     required BuildContext context,
     required WidgetBuilder builder,
   }) {
-    return showMaterialModalBottomSheet<void>(
-      context: context,
-      builder: builder,
-    );
+    return Future(() => null);
+    //return showBottomSheet(context: context, builder: builder) ;
   }
 
   @override

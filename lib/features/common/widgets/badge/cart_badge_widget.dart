@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 /// Бейдж с количеством для корзины
 class CartBadgeWidget extends StatelessWidget {
@@ -8,8 +9,8 @@ class CartBadgeWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Badge(
-      child: Icon(Icons.card_travel),
+    return Badge(
+      child: SvgPicture.asset('assets/images/bag.svg'),
     );
   }
 }

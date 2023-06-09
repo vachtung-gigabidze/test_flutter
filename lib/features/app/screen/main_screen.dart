@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:test_flutter/features/platform/factory/platform_widget_factory.dart';
+import 'package:test_flutter/features/platform/widgets/bottom_navigation_bar/material_bottom_navigation_bar.dart';
 
 /// Main widget for MainScreen module
 class MainScreen extends StatelessWidget {
@@ -14,6 +15,21 @@ class MainScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: child,
+      bottomNavigationBar: _BottomNavigationBar(),
+    );
+  }
+}
+
+class _BottomNavigationBar extends StatelessWidget {
+  const _BottomNavigationBar({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialBottomNavigationBar(
+      currentIndex: 1,
+      onTap: (value) {},
     );
   }
 }
