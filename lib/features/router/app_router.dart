@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:test_flutter/features/app/screen/main_screen.dart';
-import 'package:test_flutter/features/categories/categories.dart';
+import 'package:test_flutter/features/categories/categories_screen.dart';
 
 import 'package:test_flutter/features/platform/factory/platform_widget_factory.dart';
 

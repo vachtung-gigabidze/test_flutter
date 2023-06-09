@@ -1,44 +1,29 @@
-class Categories {
-  List<Category>? categories;
+import 'package:json_annotation/json_annotation.dart';
 
+part 'category.g.dart';
+
+@JsonSerializable()
+class Categories {
   Categories({this.categories});
 
-  Categories.fromJson(Map<String, dynamic> json) {
-    if (json['categories'] != null) {
-      categories = <Category>[];
-      json['categories'].forEach((v) {
-        categories!.add(Category.fromJson(v));
-      });
-    }
-  }
+  factory Categories.fromJson(Map<String, dynamic> json) =>
+      _$CategoriesFromJson(json);
 
-  Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = <String, dynamic>{};
-    if (categories != null) {
-      data['categories'] = categories!.map((v) => v.toJson()).toList();
-    }
-    return data;
-  }
+  List<Category>? categories;
+
+  Map<String, dynamic> toJson() => _$CategoriesToJson(this);
 }
 
+@JsonSerializable()
 class Category {
+  Category({this.id, this.name, this.imageUrl});
+
+  factory Category.fromJson(Map<String, dynamic> json) =>
+      _$CategoryFromJson(json);
+
   int? id;
   String? name;
   String? imageUrl;
 
-  Category({this.id, this.name, this.imageUrl});
-
-  Category.fromJson(Map<String, dynamic> json) {
-    id = json['id'];
-    name = json['name'];
-    imageUrl = json['image_url'];
-  }
-
-  Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = <String, dynamic>{};
-    data['id'] = id;
-    data['name'] = name;
-    data['image_url'] = imageUrl;
-    return data;
-  }
+  Map<String, dynamic> toJson() => _$CategoryToJson(this);
 }
