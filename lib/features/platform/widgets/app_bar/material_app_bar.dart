@@ -17,6 +17,7 @@ class MaterialAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
+      automaticallyImplyLeading: false,
       title: Padding(
         padding: const EdgeInsets.only(left: 16.0, right: 16.0),
         child: Container(

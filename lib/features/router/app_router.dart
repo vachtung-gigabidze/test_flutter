@@ -24,11 +24,12 @@ abstract class AppRouter {
           ),
         );
       case AppRouter.category:
-        final arguments = settings.arguments as Map<String, dynamic>;
-        final category = arguments['category'] as Category;
+        // final arguments = settings.arguments as Map<String, dynamic>;
+        // final category = arguments['category'] as Category;
 
         return widgetsFactory.createPageRouter(
-          builder: (_) => CategoryScreen(category: category),
+          builder: (_) =>
+              MainScreen(child: CategoryScreen(category: Category())),
         );
       default:
         return widgetsFactory.createPageRouter(

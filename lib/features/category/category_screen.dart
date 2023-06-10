@@ -9,31 +9,76 @@ class CategoryScreen extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    return ListView(
-      // This next line does the trick.
-      scrollDirection: Axis.horizontal,
-      children: <Widget>[
-        Container(
-          width: 160.0,
-          color: Colors.red,
-        ),
-        Container(
-          width: 160.0,
-          color: Colors.blue,
-        ),
-        Container(
-          width: 160.0,
-          color: Colors.green,
-        ),
-        Container(
-          width: 160.0,
-          color: Colors.yellow,
-        ),
-        Container(
-          width: 160.0,
-          color: Colors.orange,
-        ),
-      ],
+    return SizedBox(
+      width: double.infinity,
+      height: 330,
+      // implement ListView
+      child: ListView(
+        // make it horizontal
+        scrollDirection: Axis.horizontal,
+        children: [
+          Container(
+              margin: const EdgeInsets.all(15),
+              width: 200,
+              height: 300,
+              color: Colors.amber,
+              alignment: Alignment.center,
+              child: const Text(
+                '1',
+                style: TextStyle(fontSize: 80),
+              )),
+          Container(
+              margin: const EdgeInsets.all(15),
+              width: 200,
+              height: 300,
+              color: Colors.amber,
+              alignment: Alignment.center,
+              child: const Text(
+                '2',
+                style: TextStyle(fontSize: 80),
+              )),
+          Container(
+              margin: const EdgeInsets.all(15),
+              width: 200,
+              height: 300,
+              color: Colors.amber,
+              alignment: Alignment.center,
+              child: const Text(
+                '3',
+                style: TextStyle(fontSize: 80),
+              )),
+          Container(
+              margin: const EdgeInsets.all(15),
+              width: 200,
+              height: 300,
+              color: Colors.amber,
+              alignment: Alignment.center,
+              child: const Text(
+                '4',
+                style: TextStyle(fontSize: 80),
+              )),
+          Container(
+              margin: const EdgeInsets.all(15),
+              width: 200,
+              height: 300,
+              color: Colors.amber,
+              alignment: Alignment.center,
+              child: const Text(
+                '5',
+                style: TextStyle(fontSize: 80),
+              )),
+          Container(
+              margin: const EdgeInsets.all(15),
+              width: 200,
+              height: 300,
+              color: Colors.amber,
+              alignment: Alignment.center,
+              child: const Text(
+                '6',
+                style: TextStyle(fontSize: 80),
+              )),
+        ],
+      ),
     );
   }
 }
