@@ -16,85 +16,82 @@ class MaterialAppBar extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Widget build(BuildContext context) {
-    const fem = 1.0;
-    const ffem = 1.0;
     return AppBar(
-      title: Container(
-        margin:
-            const EdgeInsets.fromLTRB(0 * fem, 0 * fem, 1.66 * fem, 0 * fem),
-        width: double.infinity,
-        height: 44 * fem,
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Container(
-              margin: const EdgeInsets.fromLTRB(
-                  0 * fem, 1 * fem, 108 * fem, 0.5 * fem),
-              height: double.infinity,
-              child: Row(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Container(
-                    margin: const EdgeInsets.fromLTRB(
-                        0 * fem, 5 * fem, 8.5 * fem, 0 * fem),
-                    width: 15 * fem,
-                    height: 18 * fem,
-                    child: SvgPicture.asset(
-                      'assets/images/location.svg',
-                      width: 15 * fem,
-                      height: 18 * fem,
+      title: Padding(
+        padding: const EdgeInsets.only(left: 16.0, right: 16.0),
+        child: Container(
+          margin: const EdgeInsets.fromLTRB(0, 0, 1.66, 0),
+          width: double.infinity,
+          height: 44,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Container(
+                margin: const EdgeInsets.fromLTRB(0, 1, 108, 0.5),
+                height: double.infinity,
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Container(
+                      margin: const EdgeInsets.fromLTRB(0, 5, 8.5, 0),
+                      width: 15,
+                      height: 18,
+                      child: SvgPicture.asset(
+                        'assets/images/location.svg',
+                        width: 15,
+                        height: 18,
+                      ),
                     ),
-                  ),
-                  Container(
-                    height: double.infinity,
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Container(
-                          margin: const EdgeInsets.fromLTRB(
-                              0 * fem, 0 * fem, 0 * fem, 3.5 * fem),
-                          child: const Text(
-                            'Санкт-Петербург',
-                            style: TextStyle(
-                              fontFamily: 'SF Pro Display',
-                              fontSize: 18 * ffem,
-                              fontWeight: FontWeight.w500,
-                              height: 1.2000000212 * ffem / fem,
-                              color: Color(0xff000000),
+                    Container(
+                      height: double.infinity,
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Container(
+                            margin: const EdgeInsets.fromLTRB(0, 0, 0, 3.5),
+                            child: const Text(
+                              'Санкт-Петербург',
+                              style: TextStyle(
+                                fontFamily: 'SF Pro Display',
+                                fontSize: 18,
+                                fontWeight: FontWeight.w500,
+                                height: 1.2000000212,
+                                //color: Color(0xff000000),
+                              ),
                             ),
                           ),
-                        ),
-                        const Text(
-                          '12 Августа, 2023',
-                          style: TextStyle(
-                            fontFamily: 'SF Pro Display',
-                            fontSize: 14 * ffem,
-                            fontWeight: FontWeight.w400,
-                            height: 1.1500000272 * ffem / fem,
-                            letterSpacing: 0.14 * fem,
-                            color: Color(0x7f000000),
+                          const Text(
+                            '12 Августа, 2023',
+                            style: TextStyle(
+                              fontFamily: 'SF Pro Display',
+                              fontSize: 14,
+                              fontWeight: FontWeight.w400,
+                              height: 1.1500000272,
+                              letterSpacing: 0.14,
+                              //color: Color(0x7f000000),
+                            ),
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
-                  ),
-                ],
-              ),
-            ),
-            Container(
-              width: 44 * fem,
-              height: double.infinity,
-              decoration: BoxDecoration(
-                color: const Color(0xffffffff),
-                borderRadius: BorderRadius.circular(100 * fem),
-                image: const DecorationImage(
-                  fit: BoxFit.cover,
-                  image: AssetImage('assets/images/account_image.png'),
+                  ],
                 ),
               ),
-            ),
-          ],
+              Container(
+                width: 44,
+                height: double.infinity,
+                decoration: BoxDecoration(
+                  //color: const Color(0xffffffff),
+                  borderRadius: BorderRadius.circular(100),
+                  image: const DecorationImage(
+                    fit: BoxFit.cover,
+                    image: AssetImage('assets/images/account_image.png'),
+                  ),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
       //centerTitle: true,

@@ -9,6 +9,7 @@ class Categories {
   factory Categories.fromJson(Map<String, dynamic> json) =>
       _$CategoriesFromJson(json);
 
+  @JsonKey(name: 'сategories')
   List<Category>? categories;
 
   Map<String, dynamic> toJson() => _$CategoriesToJson(this);
@@ -23,6 +24,7 @@ class Category {
 
   int? id;
   String? name;
+  @JsonKey(name: 'image_url')
   String? imageUrl;
 
   Map<String, dynamic> toJson() => _$CategoryToJson(this);

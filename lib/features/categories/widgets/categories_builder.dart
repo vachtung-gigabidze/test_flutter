@@ -17,17 +17,20 @@ class CategoriesBuilder extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return RefreshIndicator(
-      onRefresh: refreshPlaces,
-      child: ListView.builder(
-        itemBuilder: (_, index) => Padding(
-          padding: const EdgeInsets.all(8),
-          child: CategoryCard(
-            category: data[index],
-            goCategoryDetails: goCategoryDetails,
+    return Padding(
+      padding: const EdgeInsets.only(left: 16.0, right: 16.0, top: 8),
+      child: RefreshIndicator(
+        onRefresh: refreshPlaces,
+        child: ListView.builder(
+          itemBuilder: (_, index) => Padding(
+            padding: const EdgeInsets.all(8),
+            child: CategoryCard(
+              category: data[index],
+              goCategoryDetails: goCategoryDetails,
+            ),
           ),
+          itemCount: data.length,
         ),
-        itemCount: data.length,
       ),
     );
   }

@@ -17,7 +17,7 @@ class MainScreen extends StatelessWidget {
     return Scaffold(
       appBar: MaterialAppBar(title: "title"),
       body: child,
-      bottomNavigationBar: _BottomNavigationBar(),
+      bottomNavigationBar: const _BottomNavigationBar(),
     );
   }
 }

@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 class AppColors {
   /// цвета и названия из макета фигмы
   static const colorWhite = Colors.white;
-  static const colorBackground = Color(0xffF5F5F5);
+  static const colorBackground = Colors.white;
   static const colorSecondary = Color(0xff3B3E5B);
   static const colorSecondary2 = Color(0xff7C7E92);
   static const colorInactiveBlack = Color.fromRGBO(124, 126, 146, 0.56);

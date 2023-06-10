@@ -14,71 +14,47 @@ class CategoryCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return AspectRatio(
-      aspectRatio: 3 / 1.8,
-      child: Material(
-        borderRadius: BorderRadius.circular(AppSizes.radiusCard),
-        clipBehavior: Clip.antiAlias,
-        color: Theme.of(context).cardColor,
-        child: Stack(
-          children: [
-            Row(
-              children: [
-                Expanded(
-                  child: SizedBox.expand(
-                    child: DecoratedBox(
-                      decoration: BoxDecoration(
-                        image: DecorationImage(
-                          image: AssetImage(category.imageUrl ?? ""),
-                          fit: BoxFit.contain,
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-                Expanded(
-                  child: _CategoryCardContent(
-                    category: category,
-                  ),
-                ),
-              ],
-            ),
-            Positioned.fill(
-              child: Material(
-                type: MaterialType.transparency,
-                child: InkWell(
-                  highlightColor: Colors.transparent,
-                  onTap: () => goCategoryDetails(category),
+    return Material(
+      borderRadius: BorderRadius.circular(AppSizes.radiusCard),
+      clipBehavior: Clip.antiAlias,
+      color: Theme.of(context).cardColor,
+      child: Stack(
+        children: [
+          Image.network(
+            category.imageUrl ?? "",
+            errorBuilder: (BuildContext context, Object exception,
+                StackTrace? stackTrace) {
+              return const Text('ð¢');
+            },
+            fit: BoxFit.contain,
+          ),
+          Positioned(
+            left: 16,
+            top: 12,
+            child: SizedBox(
+              width: 174,
+              height: 50,
+              child: Text(
+                category.name ?? "",
+                style: const TextStyle(
+                  fontFamily: 'SF Pro Display',
+                  fontSize: 20,
+                  fontWeight: FontWeight.w500,
+                  height: 1.25,
+                  letterSpacing: 0.2,
+                  color: Color(0xff000000),
                 ),
               ),
             ),
-          ],
-        ),
-      ),
-    );
-  }
-}
-
-class _CategoryCardContent extends StatelessWidget {
-  final Category category;
-
-  const _CategoryCardContent({
-    Key? key,
-    required this.category,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    final theme = Theme.of(context);
-
-    return Padding(
-      padding: const EdgeInsets.all(8.0),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(
-            category.name ?? "",
-            style: theme.textTheme.headline6,
+          ),
+          Positioned.fill(
+            child: Material(
+              type: MaterialType.transparency,
+              child: InkWell(
+                highlightColor: Colors.transparent,
+                onTap: () => goCategoryDetails(category),
+              ),
+            ),
           ),
         ],
       ),
