@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:test_flutter/features/platform/factory/platform_widget_factory.dart';
+import 'package:test_flutter/features/platform/widgets/app_bar/material_app_bar.dart';
 import 'package:test_flutter/features/platform/widgets/bottom_navigation_bar/material_bottom_navigation_bar.dart';
 
 /// Main widget for MainScreen module
@@ -14,6 +15,7 @@ class MainScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: MaterialAppBar(title: "title"),
       body: child,
       bottomNavigationBar: _BottomNavigationBar(),
     );
