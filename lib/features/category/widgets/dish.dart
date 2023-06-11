@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:test_flutter/features/category/models/dishes_entities.dart';
+import 'package:test_flutter/features/category/widgets/dish_dialog.dart';
 
 class Dish extends StatelessWidget {
   const Dish({super.key, required this.dish});
@@ -8,8 +9,13 @@ class Dish extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      width: 109,
+    return InkWell(
+      onTap: () => Navigator.of(context).push(new PageRouteBuilder(
+          opaque: false,
+          barrierDismissible: true,
+          pageBuilder: (BuildContext context, _, __) {
+            return DishDialog(dish: dish);
+          })),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -20,11 +26,10 @@ class Dish extends StatelessWidget {
               color: const Color(0xfff8f7f5),
               borderRadius: BorderRadius.circular(10),
             ),
-            child: Align(
-              alignment: Alignment.bottomCenter,
-              child: SizedBox(
-                width: 87,
-                height: 98,
+            child: Padding(
+              padding: const EdgeInsets.all(17.0),
+              child: Align(
+                alignment: Alignment.bottomCenter,
                 child: Image.network(
                   dish.imageUrl ?? "",
                   fit: BoxFit.contain,
@@ -32,16 +37,24 @@ class Dish extends StatelessWidget {
               ),
             ),
           ),
-          Text(
-            dish.name ?? "",
-            overflow: TextOverflow.ellipsis,
-            style: const TextStyle(
-              fontFamily: 'SF Pro Display',
-              fontSize: 14,
-              fontWeight: FontWeight.w400,
-              height: 1.0,
-              letterSpacing: 0.14,
-              color: Color(0xff000000),
+          const SizedBox(
+            height: 5,
+          ),
+          SizedBox(
+            width: 109,
+            child: Text(
+              dish.name ?? "",
+              maxLines: 2,
+              overflow: TextOverflow.ellipsis,
+              textAlign: TextAlign.left,
+              style: const TextStyle(
+                fontFamily: 'SF Pro Display',
+                fontSize: 14,
+                fontWeight: FontWeight.w400,
+                height: 1.0,
+                letterSpacing: 0.14,
+                color: Color(0xff000000),
+              ),
             ),
           ),
         ],
