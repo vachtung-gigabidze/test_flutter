@@ -15,7 +15,7 @@ class MainScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: MaterialAppBar(title: "title"),
+      appBar: const MaterialAppBar(title: "title"),
       body: child,
       bottomNavigationBar: const _BottomNavigationBar(),
     );

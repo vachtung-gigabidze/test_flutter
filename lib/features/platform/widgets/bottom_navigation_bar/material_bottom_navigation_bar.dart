@@ -27,7 +27,7 @@ class MaterialBottomNavigationBar extends StatelessWidget {
           label: AppStrings.bottomNavBarItemLabelSearch,
         ),
         BottomNavigationBarItem(
-          icon: CartBadgeWidget(),
+          icon: const CartBadgeWidget(),
           label: AppStrings.bottomNavBarItemLabelCart,
         ),
         BottomNavigationBarItem(
