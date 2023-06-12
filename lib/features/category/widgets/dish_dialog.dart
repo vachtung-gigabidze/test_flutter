@@ -21,7 +21,6 @@ class DishDialog extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Container(
-              // frame5838sK (4:224)
               margin: EdgeInsets.fromLTRB(0, 0, 1, 8),
               padding: EdgeInsets.fromLTRB(57, 8, 8, 14),
               width: double.infinity,
@@ -34,14 +33,12 @@ class DishDialog extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Container(
-                    // autogroupy6zooTf (HSYqf6LgYf5HqywERUy6Zo)
                     margin: EdgeInsets.fromLTRB(0, 0, 8, 0),
                     width: 198,
                     height: double.infinity,
                     child: Stack(
                       children: [
                         Positioned(
-                          // fishfiletwithrice1XuT (4:225)
                           left: 0,
                           top: 6,
                           child: Align(
@@ -56,7 +53,6 @@ class DishDialog extends StatelessWidget {
                           ),
                         ),
                         Positioned(
-                          // frame60148h (4:226)
                           left: 158,
                           top: 0,
                           child: Align(
@@ -75,7 +71,6 @@ class DishDialog extends StatelessWidget {
                     ),
                   ),
                   Container(
-                    // frame602Nv5 (4:228)
                     width: 40,
                     height: 40,
                     child: Image.network(
@@ -88,7 +83,6 @@ class DishDialog extends StatelessWidget {
               ),
             ),
             Container(
-              // preview7sf (4:230)
               margin: EdgeInsets.fromLTRB(0, 0, 0, 8),
               child: Text(
                 dish.name!,
@@ -96,20 +90,19 @@ class DishDialog extends StatelessWidget {
                   fontFamily: 'SF Pro Display',
                   fontSize: 16,
                   fontWeight: FontWeight.w500,
-                  height: 1.0499999523,
+                  height: 1.0,
                   letterSpacing: 0.16,
                   color: Color(0xff000000),
                 ),
               ),
             ),
             RichText(
-              // preview2Uq (4:599)
-              text: TextSpan(
-                style: const TextStyle(
+              text: const TextSpan(
+                style: TextStyle(
                   fontFamily: 'SF Pro Display',
                   fontSize: 14,
                   fontWeight: FontWeight.w400,
-                  height: 1.0499999183,
+                  height: 1.0,
                   letterSpacing: 0.14,
                   color: Color(0x66000000),
                 ),
@@ -120,7 +113,7 @@ class DishDialog extends StatelessWidget {
                       fontFamily: 'SF Pro Display',
                       fontSize: 14,
                       fontWeight: FontWeight.w400,
-                      height: 1.0499999183,
+                      height: 1.0,
                       letterSpacing: 0.14,
                       color: Color(0xff000000),
                     ),
@@ -159,16 +152,19 @@ class DishDialog extends StatelessWidget {
               ),
               child: Center(
                 child: Center(
-                  child: Text(
-                    'Добавить в корзину',
-                    textAlign: TextAlign.center,
-                    style: const TextStyle(
-                      fontFamily: 'SF Pro Display',
-                      fontSize: 16,
-                      fontWeight: FontWeight.w500,
-                      height: 1.1000000238,
-                      letterSpacing: 0.1000000015,
-                      color: Color(0xffffffff),
+                  child: TextButton(
+                    onPressed: () {},
+                    child: const Text(
+                      'Добавить в корзину',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontFamily: 'SF Pro Display',
+                        fontSize: 16,
+                        fontWeight: FontWeight.w500,
+                        height: 1.1,
+                        letterSpacing: 0.1,
+                        color: Color(0xffffffff),
+                      ),
                     ),
                   ),
                 ),

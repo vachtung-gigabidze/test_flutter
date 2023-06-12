@@ -9,13 +9,19 @@ class Dish extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(
-      onTap: () => Navigator.of(context).push(new PageRouteBuilder(
-          opaque: false,
-          barrierDismissible: true,
-          pageBuilder: (BuildContext context, _, __) {
-            return DishDialog(dish: dish);
-          })),
+    return GestureDetector(
+      onTap: () {
+        showDialog(
+          context: context,
+          builder: (context) => AlertDialog(content: DishDialog(dish: dish)),
+        );
+      },
+      // () => Navigator.of(context).push(PageRouteBuilder(
+      //     opaque: false,
+      //     barrierDismissible: true,
+      //     pageBuilder: (BuildContext context, _, __) {
+      //       return DishDialog(dish: dish);
+      //     })),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
