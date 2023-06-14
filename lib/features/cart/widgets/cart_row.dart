@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:test_flutter/features/cart/models/cart_entity.dart';
 
-class MyWidget extends StatelessWidget {
-  const MyWidget({super.key, required this.cartItem});
+class CartRow extends StatelessWidget {
+  const CartRow({super.key, required this.cartItem});
 
-  final CartItem cartItem;
+  final CartItemDto cartItem;
 
   @override
   Widget build(BuildContext context) {

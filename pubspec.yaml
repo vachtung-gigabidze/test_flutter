@@ -34,44 +34,45 @@ dev_dependencies:
 
 
 flutter: 
-  uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/
     - assets/images/
+    - assets/json/
   #   - images/a_dot_ham.jpeg
 
   fonts:
-    - family: SF-Pro-Display
+    - family: SF Pro Display
       fonts:
-        - asset: assets/fonts/SF-Pro-Display-Thin.otf
+        - asset: fonts/SF-Pro-Display-Thin.otf
           weight: 100
-        - asset: assets/fonts/SF-Pro-Display-Light.otf
+        - asset: fonts/SF-Pro-Display-Light.otf
           weight: 300
-        - asset: assets/fonts/SF-Pro-Display-Regular.otf
+        - asset: fonts/SF-Pro-Display-Regular.otf
           weight: 400
-        - asset: assets/fonts/SF-Pro-Display-Medium.otf
+        - asset: fonts/SF-Pro-Display-Medium.otf
           weight: 500
-        - asset: assets/fonts/SF-Pro-Display-Bold.otf
+        - asset: fonts/SF-Pro-Display-Bold.otf
           weight: 700
-        - asset: assets/fonts/SF-Pro-Display-Black.otf
+        - asset: fonts/SF-Pro-Display-Black.otf
           weight: 900
-        - asset: assets/fonts/SF-Pro-Display-ThinItalic.otf
+        - asset: fonts/SF-Pro-Display-ThinItalic.otf
           weight: 100
           style: italic
-        - asset: assets/fonts/SF-Pro-Display-LightItalic.otf
+        - asset: fonts/SF-Pro-Display-LightItalic.otf
           weight: 300
           style: italic
-        # - asset: assets/fonts/SF-Pro-Display-Italic.otf
-        #   weight: 400
-        #   style: italic
-        - asset: assets/fonts/SF-Pro-Display-MediumItalic.otf
+        - asset: fonts/SF-Pro-Display-LightItalic.otf
+          weight: 400
+          style: italic
+        - asset: fonts/SF-Pro-Display-MediumItalic.otf
           weight: 500
           style: italic
-        - asset: assets/fonts/SF-Pro-Display-BoldItalic.otf
+        - asset: fonts/SF-Pro-Display-BoldItalic.otf
           weight: 700
           style: italic
-        - asset: assets/fonts/SF-Pro-Display-BlackItalic.otf
+        - asset: fonts/SF-Pro-Display-BlackItalic.otf
           weight: 900
           style: italic
+  uses-material-design: true

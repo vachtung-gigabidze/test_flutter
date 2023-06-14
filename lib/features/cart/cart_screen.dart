@@ -10,6 +10,7 @@ class CartScreen extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final state = ref.watch(cartRepositoryProvider);
+
     return Column(
       children: [
         Expanded(
@@ -19,8 +20,7 @@ class CartScreen extends ConsumerWidget {
               CartRow(cartItem: state.values.toList()[index]),
         )),
         Container(
-          // buttonsprimarybuttonsTpu (4:632)
-          margin: EdgeInsets.fromLTRB(16, 0, 16, 16),
+          margin: const EdgeInsets.fromLTRB(16, 0, 16, 16),
           width: double.infinity,
           height: 48,
           decoration: BoxDecoration(

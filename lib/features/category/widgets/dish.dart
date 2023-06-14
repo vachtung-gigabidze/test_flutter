@@ -16,12 +16,6 @@ class Dish extends StatelessWidget {
           builder: (context) => AlertDialog(content: DishDialog(dish: dish)),
         );
       },
-      // () => Navigator.of(context).push(PageRouteBuilder(
-      //     opaque: false,
-      //     barrierDismissible: true,
-      //     pageBuilder: (BuildContext context, _, __) {
-      //       return DishDialog(dish: dish);
-      //     })),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -38,6 +32,8 @@ class Dish extends StatelessWidget {
                 alignment: Alignment.bottomCenter,
                 child: Image.network(
                   dish.imageUrl ?? "",
+                  errorBuilder: (context, error, stackTrace) =>
+                      const Placeholder(),
                   fit: BoxFit.contain,
                 ),
               ),
