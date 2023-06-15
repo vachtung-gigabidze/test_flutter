@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:test_flutter/features/category/models/dishes_entities.dart';
-import 'package:test_flutter/features/category/widgets/dish_dialog.dart';
+import 'package:test_flutter/features/category/widgets/add_dish_dialog.dart';
 
 class Dish extends StatelessWidget {
   const Dish({super.key, required this.dish});
@@ -13,7 +13,7 @@ class Dish extends StatelessWidget {
       onTap: () {
         showDialog(
           context: context,
-          builder: (context) => AlertDialog(content: DishDialog(dish: dish)),
+          builder: (context) => AddDishDialog(dish: dish),
         );
       },
       child: Column(
@@ -49,14 +49,14 @@ class Dish extends StatelessWidget {
               maxLines: 2,
               overflow: TextOverflow.ellipsis,
               textAlign: TextAlign.left,
-              style: const TextStyle(
-                fontFamily: 'SF Pro Display',
-                fontSize: 14,
-                fontWeight: FontWeight.w400,
-                height: 1.0,
-                letterSpacing: 0.14,
-                color: Color(0xff000000),
-              ),
+              // style: const TextStyle(
+              //   fontFamily: 'SF Pro Display',
+              //   fontSize: 14,
+              //   fontWeight: FontWeight.w400,
+              //   height: 1.0,
+              //   letterSpacing: 0.14,
+              //   color: Color(0xff000000),
+              // ),
             ),
           ),
         ],

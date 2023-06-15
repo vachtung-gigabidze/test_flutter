@@ -28,7 +28,7 @@ class AppTheme {
       colorScheme: base.colorScheme.copyWith(
         background: AppColors.lightBackgroundColor,
         secondary: AppColors.lightSecondaryColor,
-        onPrimary: AppColors.lightOnPrimaryColor,
+        onPrimary: AppColors.lightPrimaryColor,
         primary: AppColors.lightPrimaryColorDark,
       ),
       extensions: <ThemeExtension<dynamic>>[

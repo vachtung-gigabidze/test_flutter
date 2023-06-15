@@ -34,10 +34,18 @@ class AppTypography {
   static const textText16Medium = TextStyle(
     fontFamily: 'SF Pro Display',
     fontSize: 16.0,
-    height: 1.25,
+    height: 1.1,
+    letterSpacing: 0.1,
     fontWeight: FontWeight.w500,
   );
-
+// style: TextStyle(
+  //   fontFamily: 'SF Pro Display',
+  //   fontSize: 16,
+  //   fontWeight: FontWeight.w500,
+  //   height: 1.1,
+  //   letterSpacing: 0.1,
+  //   color: Color(0xffffffff),
+  // ),
   static const textText16Regular = TextStyle(
     fontFamily: 'SF Pro Display',
     fontSize: 16.0,
@@ -48,8 +56,9 @@ class AppTypography {
   static const textSmall14Bold = TextStyle(
     fontFamily: 'SF Pro Display',
     fontSize: 14.0,
-    height: 1.29,
-    fontWeight: FontWeight.w700,
+    height: 1.1,
+    letterSpacing: 0.14,
+    fontWeight: FontWeight.w400,
   );
 
   static const textSmall14Regular = TextStyle(
@@ -61,10 +70,10 @@ class AppTypography {
 
   static const textButton = TextStyle(
     fontFamily: 'SF Pro Display',
-    fontSize: 14.0,
-    height: 1.29,
-    letterSpacing: 0.3,
-    fontWeight: FontWeight.w700,
+    fontSize: 16,
+    fontWeight: FontWeight.w500,
+    height: 1.1,
+    letterSpacing: 0.1,
   );
 
   static const textSuperSmall12Medium = TextStyle(
