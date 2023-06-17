@@ -13,7 +13,7 @@ class CartRepository extends Notifier<Map<String, CartItemDto>> {
     final CartDto cart = await MockCartService().getCart();
 
     cart.cartItems
-        ?.map((e) => this.addItem(dish: e.dish!, dishName: e.dish?.name ?? ""));
+        ?.map((e) => addItem(dish: e.dish!, dishName: e.dish?.name ?? ""));
   }
 
   void addItem({required DishDto dish, required String dishName}) {

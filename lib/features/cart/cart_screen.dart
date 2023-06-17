@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:test_flutter/features/cart/models/cart_entity.dart';
+// import 'package:test_flutter/features/cart/models/cart_entity.dart';
 import 'package:test_flutter/features/cart/providers/cart_provider.dart';
 import 'package:test_flutter/features/cart/widgets/cart_row.dart';
 
@@ -24,14 +24,14 @@ class CartScreen extends ConsumerWidget {
           width: double.infinity,
           height: 48,
           decoration: BoxDecoration(
-            color: Color(0xff3363e0),
+            color: const Color(0xff3363e0),
             borderRadius: BorderRadius.circular(10),
           ),
           child: Center(
             child: Center(
               child: RichText(
                 textAlign: TextAlign.center,
-                text: TextSpan(
+                text: const TextSpan(
                   style: TextStyle(
                     fontFamily: 'SF Pro Display',
                     fontSize: 16,

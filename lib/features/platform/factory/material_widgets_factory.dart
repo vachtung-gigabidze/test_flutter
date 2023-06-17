@@ -18,7 +18,7 @@ class MaterialWidgetsFactory implements PlatformWidgetsFactory {
     required int currentIndex,
     required ValueSetter<int> onTap,
   }) {
-    return MaterialBottomNavigationBar(
+    return const MaterialBottomNavigationBar(
         //currentIndex: currentIndex,
         // onTap: onTap,
         );
@@ -49,8 +49,8 @@ class MaterialWidgetsFactory implements PlatformWidgetsFactory {
     VoidCallback? onPressed,
   }) {
     return CustomMaterialButton(
-      child: child,
       onPressed: onPressed,
+      child: child,
     );
   }
 

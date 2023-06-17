@@ -42,7 +42,7 @@ class MaterialAppBar extends StatelessWidget implements PreferredSizeWidget {
                       height: 18,
                     ),
                   ),
-                  Container(
+                  SizedBox(
                     height: double.infinity,
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,

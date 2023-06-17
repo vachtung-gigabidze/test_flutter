@@ -1,3 +1,5 @@
+// ignore_for_file: deprecated_member_use
+
 import 'package:flutter/material.dart';
 import 'package:test_flutter/assets/themes/custom_colors.dart';
 import 'package:test_flutter/features/common/constants/app_sizes.dart';
@@ -18,7 +20,6 @@ class CustomMaterialButton extends StatelessWidget {
 
     return ElevatedButton(
       onPressed: onPressed,
-      child: child,
       style: ElevatedButton.styleFrom(
         primary: theme.extension<CustomColors>()!.green,
         onPrimary: theme.cardColor,
@@ -26,6 +27,7 @@ class CustomMaterialButton extends StatelessWidget {
           borderRadius: BorderRadius.circular(AppSizes.radiusCard),
         ),
       ),
+      child: child,
     );
   }
 }

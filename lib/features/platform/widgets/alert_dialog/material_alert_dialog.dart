@@ -28,6 +28,7 @@ class MaterialAlertDialogApp extends StatelessWidget {
         padding: const EdgeInsets.only(bottom: 20),
         child: Text(
           title,
+          // ignore: deprecated_member_use
           style: theme.textTheme.headline5
               ?.copyWith(color: theme.extension<CustomColors>()!.green),
         ),
@@ -35,12 +36,12 @@ class MaterialAlertDialogApp extends StatelessWidget {
       content: content != null ? Text(content!) : null,
       actions: [
         TextButton(
-          child: Text(titleLeftButton),
           onPressed: onLeftButton,
+          child: Text(titleLeftButton),
         ),
         TextButton(
-          child: Text(titleRightButton),
           onPressed: onRightButton,
+          child: Text(titleRightButton),
         ),
       ],
     );
