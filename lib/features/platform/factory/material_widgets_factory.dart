@@ -19,9 +19,9 @@ class MaterialWidgetsFactory implements PlatformWidgetsFactory {
     required ValueSetter<int> onTap,
   }) {
     return MaterialBottomNavigationBar(
-      currentIndex: currentIndex,
-      onTap: onTap,
-    );
+        //currentIndex: currentIndex,
+        // onTap: onTap,
+        );
   }
 
   @override

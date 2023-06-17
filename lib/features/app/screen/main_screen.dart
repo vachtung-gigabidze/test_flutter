@@ -29,10 +29,7 @@ class _BottomNavigationBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialBottomNavigationBar(
-      currentIndex: 1,
-      onTap: (value) {},
-    );
+    return const MaterialBottomNavigationBar();
   }
 }
 

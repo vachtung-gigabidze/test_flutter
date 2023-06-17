@@ -71,7 +71,7 @@ class AppTypography {
   static const textButton = TextStyle(
     fontFamily: 'SF Pro Display',
     fontSize: 16,
-    fontWeight: FontWeight.w500,
+    fontWeight: FontWeight.w400,
     height: 1.1,
     letterSpacing: 0.1,
   );

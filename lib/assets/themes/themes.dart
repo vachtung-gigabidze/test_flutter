@@ -51,6 +51,10 @@ class AppTheme {
         unselectedLabelStyle: AppTypography.textSmall14Bold,
       ),
       bottomNavigationBarTheme: base.bottomNavigationBarTheme.copyWith(
+        selectedIconTheme:
+            base.bottomNavigationBarTheme.selectedIconTheme?.copyWith(
+          color: AppColors.lightPrimaryColorDark,
+        ),
         showSelectedLabels: true,
         selectedLabelStyle: AppTypography.textSuperSmall12Regular,
         showUnselectedLabels: true,
@@ -61,7 +65,7 @@ class AppTheme {
         unselectedItemColor: AppColors.colorInactiveBlack,
       ),
       buttonTheme: base.buttonTheme.copyWith(
-        buttonColor: AppColors.lightButtonColor,
+        buttonColor: AppColors.lightPrimaryColorDark,
         textTheme: ButtonTextTheme.primary,
         disabledColor: AppColors.lightPrimaryColorLight,
       ),

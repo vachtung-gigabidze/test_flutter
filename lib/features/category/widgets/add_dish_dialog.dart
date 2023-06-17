@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:test_flutter/features/category/models/dishes_entities.dart';
-import 'package:test_flutter/features/platform/widgets/alert_dialog/material_alert_dialog.dart';
 
 class AddDishDialog extends StatelessWidget {
   const AddDishDialog({super.key, required this.dish});
@@ -37,14 +36,11 @@ class AddDishDialog extends StatelessWidget {
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(10),
                     ),
-                    child: Align(
-                      alignment: Alignment.center,
-                      child: SvgPicture.asset(
-                        'assets/images/heart.svg',
-                        height: 24,
-                        width: 24,
-                        // fit: BoxFit.none,
-                      ),
+                    child: SvgPicture.asset(
+                      'assets/images/heart.svg',
+                      height: 16,
+                      width: 18.67,
+                      fit: BoxFit.scaleDown,
                     ),
                   ),
                   const SizedBox(
@@ -57,14 +53,12 @@ class AddDishDialog extends StatelessWidget {
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(10),
                     ),
-                    child: Align(
+                    child: SvgPicture.asset(
+                      'assets/images/close.svg',
                       alignment: Alignment.center,
-                      child: SvgPicture.asset(
-                        'assets/images/close.svg',
-                        height: 22,
-                        width: 22,
-                        // fit: BoxFit.none,
-                      ),
+                      height: 10,
+                      width: 10,
+                      fit: BoxFit.scaleDown,
                     ),
                   ),
                 ],
@@ -83,7 +77,7 @@ class AddDishDialog extends StatelessWidget {
               style: const TextStyle(
                 fontFamily: 'SF Pro Display',
                 fontSize: 16,
-                fontWeight: FontWeight.w500,
+                fontWeight: FontWeight.w400,
                 height: 1.0,
                 letterSpacing: 0.16,
                 color: Color(0xff000000),

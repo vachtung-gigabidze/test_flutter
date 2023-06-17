@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:test_flutter/features/app/screen/main_screen.dart';
+import 'package:test_flutter/features/cart/cart_screen.dart';
 import 'package:test_flutter/features/categories/categories_screen.dart';
 import 'package:test_flutter/features/categories/models/category.dart';
 import 'package:test_flutter/features/category/category_screen.dart';
@@ -11,6 +12,7 @@ abstract class AppRouter {
   static const String root = '/';
   static const String categories = '/categories';
   static const String category = '/category';
+  static const String cart = '/cart';
 
   static Route<dynamic> generateRoute(
     RouteSettings settings,
@@ -30,6 +32,13 @@ abstract class AppRouter {
         return widgetsFactory.createPageRouter(
           builder: (_) =>
               MainScreen(child: CategoryScreen(category: Category())),
+        );
+      case AppRouter.cart:
+        // final arguments = settings.arguments as Map<String, dynamic>;
+        // final category = arguments['category'] as Category;
+
+        return widgetsFactory.createPageRouter(
+          builder: (_) => const MainScreen(child: CartScreen()),
         );
       default:
         return widgetsFactory.createPageRouter(

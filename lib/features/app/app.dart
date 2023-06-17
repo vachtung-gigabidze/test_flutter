@@ -20,7 +20,7 @@ class _AppState extends State<App> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      initialRoute: AppRouter.category,
+      initialRoute: AppRouter.root,
       onGenerateRoute: (settings) =>
           AppRouter.generateRoute(settings, const MaterialWidgetsFactory()),
       // localizationsDelegates: null,
