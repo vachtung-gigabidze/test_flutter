@@ -1,10 +1,12 @@
 // import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:test_flutter/features/app/screen/main_screen.dart';
 import 'package:test_flutter/features/categories/providers/categories_provider.dart';
 // import 'package:test_flutter/features/categories/services/categories_service.dart';
 import 'package:test_flutter/features/categories/widgets/categories_builder.dart';
-import 'package:test_flutter/features/platform/widgets/material_widgets.dart';
+import 'package:test_flutter/features/category/category_screen.dart';
+import 'package:test_flutter/features/common/widgets/loader/material_loader.dart';
 
 class CategoriesScreen extends ConsumerWidget {
   const CategoriesScreen({super.key});
@@ -21,7 +23,15 @@ class CategoriesScreen extends ConsumerWidget {
 
               return CategoriesBuilder(
                 data: categories,
-                goCategoryDetails: (value) {},
+                goCategoryDetails: (value) => Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => MainScreen(
+                      title: value.name ?? "",
+                      child: CategoryScreen(category: value),
+                    ),
+                  ),
+                ),
                 refreshPlaces: () async {},
               );
             } else {
@@ -33,6 +43,5 @@ class CategoriesScreen extends ConsumerWidget {
             return const MaterialLoader();
           }
         });
-    //const Placeholder();
   }
 }

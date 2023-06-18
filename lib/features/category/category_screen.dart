@@ -4,7 +4,7 @@ import 'package:test_flutter/features/categories/models/category.dart';
 import 'package:test_flutter/features/category/providers/dishes_provider.dart';
 import 'package:test_flutter/features/category/widgets/dish.dart';
 import 'package:test_flutter/features/category/widgets/tag.dart';
-import 'package:test_flutter/features/platform/widgets/material_widgets.dart';
+import 'package:test_flutter/features/common/widgets/loader/material_loader.dart';
 
 class CategoryScreen extends ConsumerWidget {
   const CategoryScreen({required this.category, super.key});

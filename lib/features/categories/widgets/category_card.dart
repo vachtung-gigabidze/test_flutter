@@ -24,7 +24,7 @@ class CategoryCard extends StatelessWidget {
             category.imageUrl ?? "",
             errorBuilder: (BuildContext context, Object exception,
                 StackTrace? stackTrace) {
-              return const Text('ð¢');
+              return const Placeholder();
             },
             fit: BoxFit.contain,
           ),
@@ -42,7 +42,7 @@ class CategoryCard extends StatelessWidget {
                   fontWeight: FontWeight.w500,
                   height: 1.25,
                   letterSpacing: 0.2,
-                  color: Color(0xff000000),
+                  // color: Color(0xff000000),
                 ),
               ),
             ),

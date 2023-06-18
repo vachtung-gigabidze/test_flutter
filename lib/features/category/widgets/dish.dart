@@ -19,22 +19,24 @@ class Dish extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Container(
-            width: 109,
-            height: 109,
-            decoration: BoxDecoration(
-              color: const Color(0xfff8f7f5),
-              borderRadius: BorderRadius.circular(10),
-            ),
-            child: Padding(
-              padding: const EdgeInsets.all(17.0),
-              child: Align(
-                alignment: Alignment.bottomCenter,
-                child: Image.network(
-                  dish.imageUrl ?? "",
-                  errorBuilder: (context, error, stackTrace) =>
-                      const Placeholder(),
-                  fit: BoxFit.contain,
+          Card(
+            child: Container(
+              width: 109,
+              height: 109,
+              decoration: BoxDecoration(
+                // color: const Color(0xfff8f7f5),
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: Padding(
+                padding: const EdgeInsets.all(17.0),
+                child: Align(
+                  alignment: Alignment.bottomCenter,
+                  child: Image.network(
+                    dish.imageUrl ?? "",
+                    errorBuilder: (context, error, stackTrace) =>
+                        const Placeholder(),
+                    fit: BoxFit.contain,
+                  ),
                 ),
               ),
             ),

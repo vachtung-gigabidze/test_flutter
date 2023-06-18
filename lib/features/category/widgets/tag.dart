@@ -13,7 +13,7 @@ class Tag extends StatelessWidget {
             width: 100,
             height: 35,
             decoration: BoxDecoration(
-              color: const Color(0xff3363e0),
+              // color: const Color(0xff3363e0),
               borderRadius: BorderRadius.circular(10),
             ),
             child: Center(
@@ -25,7 +25,7 @@ class Tag extends StatelessWidget {
                   fontWeight: FontWeight.w400,
                   height: 1,
                   letterSpacing: 0.14,
-                  color: Color(0xffffffff),
+                  // color: Color(0xffffffff),
                 ),
               ),
             ),
@@ -34,7 +34,7 @@ class Tag extends StatelessWidget {
             width: 100,
             height: 35,
             decoration: BoxDecoration(
-              color: const Color(0xfff8f7f5),
+              // color: const Color(0xfff8f7f5),
               borderRadius: BorderRadius.circular(10),
             ),
             child: Center(
@@ -46,7 +46,7 @@ class Tag extends StatelessWidget {
                   fontWeight: FontWeight.w400,
                   height: 1.0,
                   letterSpacing: 0.14,
-                  color: Color(0xff000000),
+                  // color: Color(0xff000000),
                 ),
               ),
             ),
