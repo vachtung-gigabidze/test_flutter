@@ -17,11 +17,14 @@ class AddDishDialog extends StatelessWidget {
         height: 232,
         child: Stack(children: [
           Center(
-            child: Image.network(
-              width: 198,
-              height: 204,
-              dish.imageUrl!,
-              fit: BoxFit.contain,
+            child: Hero(
+              tag: dish.name!,
+              child: Image.network(
+                width: 198,
+                height: 204,
+                dish.imageUrl!,
+                fit: BoxFit.contain,
+              ),
             ),
           ),
           Positioned(
