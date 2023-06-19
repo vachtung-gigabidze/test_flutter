@@ -10,7 +10,7 @@ class AddDishDialog extends StatelessWidget {
     return AlertDialog(
       title: Container(
         decoration: BoxDecoration(
-          // color: const Color(0xfff8f7f5),
+          color: const Color(0xfff8f7f5),
           borderRadius: BorderRadius.circular(10),
         ),
         width: 311,

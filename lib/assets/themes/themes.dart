@@ -33,6 +33,7 @@ class AppTheme {
         onPrimary: AppColors.lightPrimaryColor,
         primary: AppColors.lightPrimaryColorDark,
       ),
+
       cardTheme: base.cardTheme.copyWith(color: AppColors.colorGrey2),
       // extensions: <ThemeExtension<dynamic>>[
       //   CustomColors.light,
