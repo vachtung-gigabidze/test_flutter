@@ -8,6 +8,8 @@ class AddDishDialog extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
+      shape: const RoundedRectangleBorder(
+          borderRadius: BorderRadius.all(Radius.circular(15.0))),
       title: Container(
         decoration: BoxDecoration(
           color: const Color(0xfff8f7f5),
@@ -36,7 +38,7 @@ class AddDishDialog extends StatelessWidget {
                     width: 40,
                     height: 40,
                     decoration: BoxDecoration(
-                      // color: Colors.white,
+                      color: Colors.white,
                       borderRadius: BorderRadius.circular(10),
                     ),
                     child: SvgPicture.asset(
@@ -49,19 +51,22 @@ class AddDishDialog extends StatelessWidget {
                   const SizedBox(
                     width: 8,
                   ),
-                  Container(
-                    width: 40,
-                    height: 40,
-                    decoration: BoxDecoration(
-                      // color: Colors.white,
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                    child: SvgPicture.asset(
-                      'assets/images/close.svg',
-                      alignment: Alignment.center,
-                      height: 10,
-                      width: 10,
-                      fit: BoxFit.scaleDown,
+                  GestureDetector(
+                    onTap: () => Navigator.pop(context),
+                    child: Container(
+                      width: 40,
+                      height: 40,
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      child: SvgPicture.asset(
+                        'assets/images/close.svg',
+                        alignment: Alignment.center,
+                        height: 10,
+                        width: 10,
+                        fit: BoxFit.scaleDown,
+                      ),
                     ),
                   ),
                 ],

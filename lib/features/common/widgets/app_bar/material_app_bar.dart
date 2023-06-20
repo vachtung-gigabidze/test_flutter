@@ -29,87 +29,88 @@ class MaterialAppBar extends StatelessWidget implements PreferredSizeWidget {
                 fit: BoxFit.scaleDown,
               ),
             ),
-      title: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Container(
-          margin: const EdgeInsets.fromLTRB(0, 0, 1.66, 0),
-          width: double.infinity,
-          height: 44,
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              title != ""
-                  ? Text(title)
-                  : Container(
-                      margin: const EdgeInsets.fromLTRB(0, 1, 108, 0.5),
-                      height: double.infinity,
-                      child: Row(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Container(
-                            margin: const EdgeInsets.fromLTRB(0, 5, 8.5, 0),
-                            width: 15,
-                            height: 18,
-                            child: SvgPicture.asset(
-                              'assets/images/location.svg',
-                              width: 15,
-                              height: 18,
-                            ),
-                          ),
-                          SizedBox(
-                            height: double.infinity,
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Container(
-                                  margin:
-                                      const EdgeInsets.fromLTRB(0, 0, 0, 3.5),
-                                  child: const Text(
-                                    'Санкт-Петербург',
-                                    style: TextStyle(
-                                      fontFamily: 'SF Pro Display',
-                                      fontSize: 18,
-                                      fontWeight: FontWeight.w400,
-                                      height: 1.2,
-                                      // color: Color(0xff000000),
-                                    ),
-                                  ),
-                                ),
-                                const Text(
-                                  '12 Августа, 2023',
-                                  style: TextStyle(
-                                    fontFamily: 'SF Pro Display',
-                                    fontSize: 14,
-                                    fontWeight: FontWeight.w400,
-                                    height: 1.15,
-                                    letterSpacing: 0.14,
-                                    // color: Color(0x7f000000),
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ],
+      title: SizedBox(
+        // width: double.infinity,
+        height: 44,
+        child: title != ""
+            ? Center(child: Text(title))
+            : Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  SizedBox(
+                    width: 24,
+                    height: 24,
+                    child: Center(
+                      child: SvgPicture.asset(
+                        'assets/images/location.svg',
+                        width: 15,
+                        height: 18,
+                        fit: BoxFit.contain,
                       ),
                     ),
-              Container(
-                width: 44,
-                height: double.infinity,
-                decoration: BoxDecoration(
-                  //color: const Color(0xffffffff),
-                  borderRadius: BorderRadius.circular(100),
-                  image: const DecorationImage(
-                    fit: BoxFit.cover,
-                    image: AssetImage('assets/images/account_image.png'),
                   ),
-                ),
+                  const SizedBox(
+                    width: 4,
+                  ),
+                  SizedBox(
+                    height: double.infinity,
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Container(
+                          // margin: const EdgeInsets.fromLTRB(0, 0, 0, 3.5),
+                          child: const Text(
+                            'Нижневартовск',
+                            style: TextStyle(
+                              fontFamily: 'SF Pro Display',
+                              fontSize: 18,
+                              fontWeight: FontWeight.w400,
+                              height: 1.2,
+                              // color: Color(0xff000000),
+                            ),
+                          ),
+                        ),
+                        const Text(
+                          '20 Июля, 2023',
+                          style: TextStyle(
+                            fontFamily: 'SF Pro Display',
+                            fontSize: 14,
+                            fontWeight: FontWeight.w400,
+                            height: 1.15,
+                            letterSpacing: 0.14,
+                            // color: Color(0x7f000000),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
               ),
-            ],
+      ),
+      actions: [
+        Padding(
+          padding: const EdgeInsets.only(right: 16.0),
+          child: Image.asset(
+            'assets/images/account_image.png',
+            fit: BoxFit.contain,
+            height: 44,
+            width: 44,
           ),
         ),
-      ),
-      //centerTitle: true,
+        // Container(
+        //   width: 44,
+        //   height: double.infinity,
+        //   decoration: BoxDecoration(
+        //     //color: const Color(0xffffffff),
+        //     borderRadius: BorderRadius.circular(100),
+        //     image: const DecorationImage(
+        //       fit: BoxFit.cover,
+        //       image: AssetImage(),
+        //     ),
+        //   ),
+        // ),
+      ],
+      centerTitle: true,
       // actions: actionButton != null ? [actionButton!] : null,
     );
   }

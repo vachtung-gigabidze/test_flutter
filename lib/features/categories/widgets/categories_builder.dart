@@ -21,13 +21,11 @@ class CategoriesBuilder extends StatelessWidget {
       padding: const EdgeInsets.only(left: 16.0, right: 16.0, top: 8),
       child: RefreshIndicator(
         onRefresh: refreshPlaces,
-        child: ListView.builder(
-          itemBuilder: (_, index) => Padding(
-            padding: const EdgeInsets.all(8),
-            child: CategoryCard(
-              category: data[index],
-              goCategoryDetails: goCategoryDetails,
-            ),
+        child: ListView.separated(
+          separatorBuilder: (context, index) => const SizedBox(height: 8),
+          itemBuilder: (_, index) => CategoryCard(
+            category: data[index],
+            goCategoryDetails: goCategoryDetails,
           ),
           itemCount: data.length,
         ),

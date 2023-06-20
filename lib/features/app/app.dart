@@ -19,6 +19,7 @@ class AppState extends State<App> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       initialRoute: AppRouter.root,
       onGenerateRoute: (settings) => AppRouter.generateRoute(settings),
       // localizationsDelegates: null,
