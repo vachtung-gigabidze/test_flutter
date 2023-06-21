@@ -5,12 +5,18 @@ import 'package:flutter_svg/flutter_svg.dart';
 class CartBadgeWidget extends StatelessWidget {
   const CartBadgeWidget({
     Key? key,
+    required this.color,
   }) : super(key: key);
+
+  final Color? color;
 
   @override
   Widget build(BuildContext context) {
     return Badge(
-      child: SvgPicture.asset('assets/images/bag.svg'),
+      child: SvgPicture.asset(
+        'assets/images/bag.svg',
+        color: color,
+      ),
     );
   }
 }

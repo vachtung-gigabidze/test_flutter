@@ -6,6 +6,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:test_flutter/features/app/providers/navbar_provider.dart';
 import 'package:test_flutter/features/common/constants/app_string.dart';
 import 'package:test_flutter/features/common/widgets/badge/cart_badge_widget.dart';
+import 'package:test_flutter/features/router/app_router.dart';
 
 class MaterialBottomNavigationBar extends ConsumerWidget {
   //final int currentIndex;
@@ -28,6 +29,41 @@ class MaterialBottomNavigationBar extends ConsumerWidget {
     final currentIndex = ref.watch(navbarProvider);
     return BottomNavigationBar(
       currentIndex: ref.watch(navbarProvider),
+      onTap: (value) {
+        switch (value) {
+          case 0:
+            Navigator.pushReplacementNamed(
+              context,
+              AppRouter.root,
+            );
+            break;
+          case 1:
+            Navigator.pushReplacementNamed(
+              context,
+              AppRouter.search,
+            );
+            break;
+          case 2:
+            Navigator.pushReplacementNamed(
+              context,
+              AppRouter.cart,
+            );
+            break;
+          case 3:
+            Navigator.pushReplacementNamed(
+              context,
+              AppRouter.account,
+            );
+            break;
+          default:
+            Navigator.pushReplacementNamed(
+              context,
+              AppRouter.root,
+            );
+
+            ref.read(navbarProvider.notifier).select(value);
+        }
+      },
       items: [
         BottomNavigationBarItem(
           icon: SvgPicture.asset('assets/images/home.svg',
@@ -39,8 +75,8 @@ class MaterialBottomNavigationBar extends ConsumerWidget {
               color: itemColor(currentIndex == 1, context)),
           label: AppStrings.bottomNavBarItemLabelSearch,
         ),
-        const BottomNavigationBarItem(
-          icon: CartBadgeWidget(),
+        BottomNavigationBarItem(
+          icon: CartBadgeWidget(color: itemColor(currentIndex == 2, context)),
           label: AppStrings.bottomNavBarItemLabelCart,
         ),
         BottomNavigationBarItem(
@@ -49,7 +85,6 @@ class MaterialBottomNavigationBar extends ConsumerWidget {
           label: AppStrings.bottomNavBarItemLabelAccount,
         ),
       ],
-      onTap: (value) => ref.read(navbarProvider.notifier).select(value),
     );
   }
 }
