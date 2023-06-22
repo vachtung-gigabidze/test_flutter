@@ -37,25 +37,22 @@ class MaterialAppBar extends StatelessWidget implements PreferredSizeWidget {
             const SizedBox(
               width: 4,
             ),
-            SizedBox(
+            const SizedBox(
               height: double.infinity,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Container(
-                    // margin: const EdgeInsets.fromLTRB(0, 0, 0, 3.5),
-                    child: const Text(
-                      'Нижневартовск',
-                      style: TextStyle(
-                        fontFamily: 'SF Pro Display',
-                        fontSize: 18,
-                        fontWeight: FontWeight.w400,
-                        height: 1.2,
-                        // color: Color(0xff000000),
-                      ),
+                  Text(
+                    'Нижневартовск',
+                    style: TextStyle(
+                      fontFamily: 'SF Pro Display',
+                      fontSize: 18,
+                      fontWeight: FontWeight.w400,
+                      height: 1.2,
+                      // color: Color(0xff000000),
                     ),
                   ),
-                  const Text(
+                  Text(
                     '20 Июля, 2023',
                     style: TextStyle(
                       fontFamily: 'SF Pro Display',
