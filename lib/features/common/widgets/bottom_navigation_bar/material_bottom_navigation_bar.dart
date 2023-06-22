@@ -6,7 +6,8 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:test_flutter/features/app/providers/navbar_provider.dart';
 import 'package:test_flutter/features/common/constants/app_string.dart';
 import 'package:test_flutter/features/common/widgets/badge/cart_badge_widget.dart';
-import 'package:test_flutter/features/router/app_router.dart';
+import 'package:test_flutter/features/navigation/app_router.dart';
+import 'package:go_router/go_router.dart';
 
 class MaterialBottomNavigationBar extends ConsumerWidget {
   //final int currentIndex;
@@ -32,37 +33,31 @@ class MaterialBottomNavigationBar extends ConsumerWidget {
       onTap: (value) {
         switch (value) {
           case 0:
-            Navigator.pushReplacementNamed(
-              context,
+            context.go(
               AppRouter.root,
             );
             break;
           case 1:
-            Navigator.pushReplacementNamed(
-              context,
+            context.go(
               AppRouter.search,
             );
             break;
           case 2:
-            Navigator.pushReplacementNamed(
-              context,
+            context.go(
               AppRouter.cart,
             );
             break;
           case 3:
-            Navigator.pushReplacementNamed(
-              context,
+            context.go(
               AppRouter.account,
             );
             break;
           default:
-            Navigator.pushReplacementNamed(
-              context,
+            context.go(
               AppRouter.root,
             );
-
-            ref.read(navbarProvider.notifier).select(value);
         }
+        ref.read(navbarProvider.notifier).select(value);
       },
       items: [
         BottomNavigationBarItem(

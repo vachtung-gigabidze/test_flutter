@@ -1,12 +1,10 @@
-// import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:test_flutter/features/app/screen/main_screen.dart';
 import 'package:test_flutter/features/categories/providers/categories_provider.dart';
-// import 'package:test_flutter/features/categories/services/categories_service.dart';
 import 'package:test_flutter/features/categories/widgets/categories_builder.dart';
-import 'package:test_flutter/features/category/category_screen.dart';
 import 'package:test_flutter/features/common/widgets/loader/material_loader.dart';
+import 'package:test_flutter/features/navigation/app_router.dart';
 
 class CategoriesScreen extends ConsumerWidget {
   const CategoriesScreen({super.key});
@@ -23,15 +21,8 @@ class CategoriesScreen extends ConsumerWidget {
 
               return CategoriesBuilder(
                 data: categories,
-                goCategoryDetails: (value) => Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => MainScreen(
-                      title: value.name ?? "",
-                      child: CategoryScreen(category: value),
-                    ),
-                  ),
-                ),
+                goCategoryDetails: (value) =>
+                    context.go(AppRouter.category, extra: value),
                 refreshPlaces: () async {},
               );
             } else {

@@ -5,32 +5,19 @@ import 'package:test_flutter/features/common/widgets/bottom_navigation_bar/mater
 class MainScreen extends StatelessWidget {
   const MainScreen({
     Key? key,
-    required this.child,
-    required this.title,
+    required this.body,
+    required this.appBar,
   }) : super(key: key);
 
-  final Widget? child;
-  final String title;
+  final Widget body;
+  final PreferredSizeWidget? appBar;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: MaterialAppBar(
-        title: title,
-      ),
-      body: child,
-      bottomNavigationBar: const _BottomNavigationBar(),
+      appBar: appBar ?? const MaterialAppBar(),
+      body: body,
+      bottomNavigationBar: const MaterialBottomNavigationBar(),
     );
-  }
-}
-
-class _BottomNavigationBar extends StatelessWidget {
-  const _BottomNavigationBar({
-    Key? key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return const MaterialBottomNavigationBar();
   }
 }
