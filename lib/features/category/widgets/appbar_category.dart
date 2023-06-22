@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
 
-class AppBarCategory extends StatelessWidget {
+class AppBarCategory extends StatelessWidget implements PreferredSizeWidget {
   const AppBarCategory({super.key, required this.title});
   final String title;
   @override
@@ -32,4 +32,7 @@ class AppBarCategory extends StatelessWidget {
       ],
     );
   }
+
+  @override
+  Size get preferredSize => const Size.fromHeight(kToolbarHeight);
 }

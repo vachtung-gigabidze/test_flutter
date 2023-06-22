@@ -22,9 +22,9 @@ abstract class AppRouter {
     ShellRoute(
       builder: (context, state, child) => MainScreen(
         body: child,
-        appBar: state.path == AppRouter.category
+        appBar: state.location == AppRouter.category
             ? AppBarCategory(title: (state.extra as Category).name ?? "")
-                as PreferredSizeWidget
+            //as PreferredSizeWidget
             : null,
       ),
       routes: [
