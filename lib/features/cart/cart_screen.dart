@@ -14,10 +14,13 @@ class CartScreen extends ConsumerWidget {
     return Column(
       children: [
         Expanded(
-            child: ListView.builder(
-          itemCount: state.length,
-          itemBuilder: (context, index) =>
-              CartRow(cartItem: state.values.toList()[index]),
+            child: Padding(
+          padding: const EdgeInsets.fromLTRB(16, 16, 16, 0),
+          child: ListView.builder(
+            itemCount: state.length,
+            itemBuilder: (context, index) =>
+                CartRow(cartItem: state.values.toList()[index]),
+          ),
         )),
         Container(
           margin: const EdgeInsets.fromLTRB(16, 0, 16, 16),
