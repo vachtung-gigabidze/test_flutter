@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:test_flutter/features/cart/providers/cart_provider.dart';
 import 'package:test_flutter/features/category/models/dishes_entities.dart';
 
-class AddDishDialog extends StatelessWidget {
+class AddDishDialog extends ConsumerWidget {
   const AddDishDialog({super.key, required this.dish});
   final DishDto dish;
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return AlertDialog(
       shape: const RoundedRectangleBorder(
           borderRadius: BorderRadius.all(Radius.circular(15.0))),
@@ -140,7 +142,11 @@ class AddDishDialog extends StatelessWidget {
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(12),
               )),
-          onPressed: () {},
+          onPressed: () {
+            ref
+                .read(cartRepositoryProvider.notifier)
+                .addItem(dish: dish, dishName: dish.name!);
+          },
           child: const Text(
             'Добавить в корзину',
             textAlign: TextAlign.center,
