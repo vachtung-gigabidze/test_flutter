@@ -27,6 +27,7 @@ class AppState extends State<App> {
       //  supportedLocales: const [Locale('ru', 'RU')],
       //  locale: const Locale('ru'),
       theme: AppTheme.lightTheme,
+
       // darkTheme: AppTheme.darkTheme,
     );
   }

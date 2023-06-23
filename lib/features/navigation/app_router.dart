@@ -18,47 +18,51 @@ abstract class AppRouter {
   static const String search = '/search';
   static const String account = '/account';
 
-  static GoRouter router = GoRouter(initialLocation: root, routes: <RouteBase>[
-    ShellRoute(
-      builder: (context, state, child) => MainScreen(
-        body: child,
-        appBar: state.location == AppRouter.category
-            ? AppBarCategory(title: (state.extra as Category).name ?? "")
-            //as PreferredSizeWidget
-            : null,
+  static GoRouter router = GoRouter(
+    initialLocation: root,
+    routes: <RouteBase>[
+      ShellRoute(
+        builder: (context, state, child) => MainScreen(
+          body: child,
+          appBar: state.location == AppRouter.category
+              ? AppBarCategory(
+                  title: (state.extra as Category).name ??
+                      "Наименование категории")
+              : null,
+        ),
+        routes: [
+          GoRoute(
+            path: root,
+            builder: (BuildContext context, GoRouterState state) {
+              return const CategoriesScreen();
+            },
+          ),
+          GoRoute(
+            path: category,
+            builder: (BuildContext context, GoRouterState state) {
+              return CategoryScreen(category: state.extra as Category);
+            },
+          ),
+          GoRoute(
+            path: cart,
+            builder: (BuildContext context, GoRouterState state) {
+              return const CartScreen();
+            },
+          ),
+          GoRoute(
+            path: search,
+            builder: (BuildContext context, GoRouterState state) {
+              return const SearchScreen();
+            },
+          ),
+          GoRoute(
+            path: account,
+            builder: (BuildContext context, GoRouterState state) {
+              return const AccountScreen();
+            },
+          ),
+        ],
       ),
-      routes: [
-        GoRoute(
-          path: root,
-          builder: (BuildContext context, GoRouterState state) {
-            return const CategoriesScreen();
-          },
-        ),
-        GoRoute(
-          path: category,
-          builder: (BuildContext context, GoRouterState state) {
-            return CategoryScreen(category: state.extra as Category);
-          },
-        ),
-        GoRoute(
-          path: cart,
-          builder: (BuildContext context, GoRouterState state) {
-            return const CartScreen();
-          },
-        ),
-        GoRoute(
-          path: search,
-          builder: (BuildContext context, GoRouterState state) {
-            return const SearchScreen();
-          },
-        ),
-        GoRoute(
-          path: account,
-          builder: (BuildContext context, GoRouterState state) {
-            return const AccountScreen();
-          },
-        ),
-      ],
-    ),
-  ]);
+    ],
+  );
 }

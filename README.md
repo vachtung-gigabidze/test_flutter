@@ -1,7 +1,7 @@
 # test_flutter
 
-A new Flutter project.
+Test task flutter 
 
-## Getting Started
+## Description
 
-This project is a starting point for a Flutter application.
+This project is a test task for flutter application
