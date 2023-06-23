@@ -1,16 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
+import 'package:test_flutter/features/navigation/app_router.dart';
 
 class AppBarCategory extends StatelessWidget implements PreferredSizeWidget {
-  const AppBarCategory({super.key, required this.title});
   final String title;
+
+  const AppBarCategory({super.key, required this.title});
+
+  @override
+  Size get preferredSize => const Size.fromHeight(kToolbarHeight);
+
   @override
   Widget build(BuildContext context) {
     return AppBar(
       centerTitle: true,
       leading: GestureDetector(
-        onTap: () => context.pop(),
+        onTap: () => context.go(AppRouter.root),
         child: SvgPicture.asset(
           'assets/images/back.svg',
           width: 6,
@@ -32,7 +38,4 @@ class AppBarCategory extends StatelessWidget implements PreferredSizeWidget {
       ],
     );
   }
-
-  @override
-  Size get preferredSize => const Size.fromHeight(kToolbarHeight);
 }
