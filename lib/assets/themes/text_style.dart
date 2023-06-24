@@ -68,6 +68,32 @@ class AppTypography {
     fontWeight: FontWeight.w400,
   );
 
+  static const textText16MediumWhite = TextStyle(
+    fontFamily: 'SF Pro Display',
+    fontSize: 16,
+    fontWeight: FontWeight.w500,
+    height: 1.1,
+    letterSpacing: 0.1,
+    color: Color(0xffffffff),
+  );
+
+  static const textText14MediumBlack = TextStyle(
+    fontFamily: 'SF Pro Display',
+    fontSize: 14,
+    fontWeight: FontWeight.w500,
+    height: 1.0,
+    letterSpacing: 0.14,
+    color: Color(0xff000000),
+  );
+  static const textText14RegularBlack = TextStyle(
+    fontFamily: 'SF Pro Display',
+    fontSize: 14,
+    fontWeight: FontWeight.w400,
+    height: 1.0,
+    letterSpacing: 0.14,
+    color: Color(0xff000000),
+  );
+
   static const textButton = TextStyle(
     fontFamily: 'SF Pro Display',
     fontSize: 16,

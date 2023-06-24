@@ -146,6 +146,7 @@ class AddDishDialog extends ConsumerWidget {
             ref
                 .read(cartRepositoryProvider.notifier)
                 .addItem(dish: dish, dishName: dish.name!);
+            Navigator.pop(context);
           },
           child: const Text(
             'Добавить в корзину',

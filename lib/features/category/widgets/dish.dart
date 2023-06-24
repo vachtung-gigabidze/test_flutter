@@ -39,6 +39,8 @@ class Dish extends StatelessWidget {
                     tag: dish.name!,
                     child: Image.network(
                       dish.imageUrl ?? "",
+                      height: 87,
+                      width: 87,
                       errorBuilder: (context, error, stackTrace) =>
                           const Placeholder(),
                       fit: BoxFit.contain,

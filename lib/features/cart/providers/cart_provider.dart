@@ -46,6 +46,12 @@ class CartRepository extends Notifier<Map<String, CartItemDto>> {
       return quantity;
     }
   }
+
+  double cost() {
+    double? r = state.values
+        .fold(.0, (t, e) => t ?? .0 + (e.dish?.price ?? .0 * e.qty!));
+    return r ?? .0;
+  }
 }
 
 final cartRepositoryProvider =

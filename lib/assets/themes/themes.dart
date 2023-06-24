@@ -87,7 +87,7 @@ class AppTheme {
         activeTrackColor: AppColors.lightAccentColor,
       ),
       floatingActionButtonTheme: base.floatingActionButtonTheme.copyWith(
-        backgroundColor: AppColors.lightAccentColor,
+        backgroundColor: AppColors.lightPrimaryColorDark,
         elevation: 0,
         highlightElevation: 0,
       ),
