@@ -1,25 +1,16 @@
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:test_flutter/features/cart/models/cart_entity.dart';
 // import 'package:test_flutter/features/cart/services/mock_cart_service.dart';
 import 'package:test_flutter/features/category/models/dishes_entities.dart';
 
 class CartRepository {
-  CartRepository() {
-    state = {};
-  }
+  final Map<String, CartItemDto> cart;
 
-  late Map<String, CartItemDto> state;
+  CartRepository(this.cart);
+}
 
-  // @override
-  // Map<String, CartItemDto> build() {
-  //   return {};
-  // }
-
-  // void initFromCart() async {
-  //   final CartDto cart = await MockCartService().getCart();
-
-  //   cart.cartItems
-  //       ?.map((e) => addItem(dish: e.dish!, dishName: e.dish?.name ?? ""));
-  // }
+class CartRepositoryNotifier extends StateNotifier<CartRepository> {
+  CartRepositoryNotifier(super.state);
 
   void addItem({required DishDto dish, required String dishName}) {
     if (state.containsKey(dishName)) {
@@ -54,10 +45,4 @@ class CartRepository {
 
   double? cost() =>
       state.values.fold(.0, (t, e) => t! + (e.dish!.price! * e.qty!));
-
-  // double cost() {
-  //   double? r = state.values
-  //       .fold(.0, (t, e) => t ?? .0 + (e.dish?.price ?? .0 * e.qty!));
-  //   return r ?? .0;
-  // }
 }
