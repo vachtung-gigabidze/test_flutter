@@ -1,59 +1,25 @@
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:test_flutter/features/cart/models/cart_entity.dart';
-import 'package:test_flutter/features/cart/services/mock_cart_service.dart';
-import 'package:test_flutter/features/category/models/dishes_entities.dart';
+import 'package:riverpod_annotation/riverpod_annotation.dart';
+import 'package:test_flutter/features/cart/providers/cart_repository.dart';
 
-class CartRepository extends Notifier<Map<String, CartItemDto>> {
+part 'cart_provider.g.dart';
+
+// final cartRepositoryProvider =
+//     NotifierProvider<CartRepository, Map<String, CartItemDto>>(
+//         CartRepository.new);
+// @Riverpod(keepAlive: true)
+// final cartProvider = StateProvider<CartRepository>(
+//   // We return the default sort type, here name.
+//   (ref) => CartRepository(),
+// );
+
+//     StateNotifierProvider<CartRepository, Map<String, CartItemDto>>((ref) {
+//   return CartRepository();
+// }, name: 'cart');
+@Riverpod(keepAlive: true)
+class Cart extends _$Cart {
   @override
-  Map<String, CartItemDto> build() {
-    return {};
-  }
+  CartRepository build() => CartRepository();
 
-  void initFromCart() async {
-    final CartDto cart = await MockCartService().getCart();
-
-    cart.cartItems
-        ?.map((e) => addItem(dish: e.dish!, dishName: e.dish?.name ?? ""));
-  }
-
-  void addItem({required DishDto dish, required String dishName}) {
-    if (state.containsKey(dishName)) {
-      state.update(dishName,
-          (value) => CartItemDto(dish: value.dish, qty: value.qty! + 1));
-    }
-    if (!state.containsKey(dishName)) {
-      state.putIfAbsent(
-        dishName,
-        () => CartItemDto(dish: dish, qty: 1),
-      );
-    }
-  }
-
-  void removeItem(String dishName) {
-    if (state.containsKey(dishName)) {
-      state.update(dishName,
-          (value) => CartItemDto(dish: value.dish, qty: value.qty! - 1));
-    }
-  }
-
-  void clearCart() {
-    state.clear();
-  }
-
-  getCartItem<String>(dishName) {
-    if (state.containsKey(dishName)) {
-      int quantity = state[dishName]!.qty ?? 0;
-      return quantity;
-    }
-  }
-
-  double cost() {
-    double? r = state.values
-        .fold(.0, (t, e) => t ?? .0 + (e.dish?.price ?? .0 * e.qty!));
-    return r ?? .0;
-  }
+  // void increment() => state++;
 }
-
-final cartRepositoryProvider =
-    NotifierProvider<CartRepository, Map<String, CartItemDto>>(
-        CartRepository.new);

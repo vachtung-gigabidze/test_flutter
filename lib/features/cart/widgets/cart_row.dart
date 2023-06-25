@@ -5,15 +5,16 @@ import 'package:test_flutter/assets/themes/text_style.dart';
 import 'package:test_flutter/features/cart/models/cart_entity.dart';
 import 'package:test_flutter/features/cart/providers/cart_provider.dart';
 
-class CartRow extends ConsumerWidget {
+class CartRow extends HookConsumerWidget {
   const CartRow({super.key, required this.cartItem});
 
   final CartItemDto cartItem;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final dish = ref
-        .watch(cartRepositoryProvider)
+    CartItemDto dish = ref
+        .watch(cartProvider)
+        .state
         .values
         .firstWhere((d) => d.dish!.name! == cartItem.dish!.name!);
     return SizedBox(
@@ -94,9 +95,7 @@ class CartRow extends ConsumerWidget {
               children: [
                 GestureDetector(
                   onTap: () {
-                    ref
-                        .read(cartRepositoryProvider.notifier)
-                        .removeItem(cartItem.dish!.name!);
+                    ref.read(cartProvider).removeItem(cartItem.dish!.name!);
                   },
                   child: SvgPicture.asset(
                     'assets/images/minus.svg',
@@ -107,7 +106,7 @@ class CartRow extends ConsumerWidget {
                 Text('${dish.qty}', style: AppTypography.textText14MediumBlack),
                 GestureDetector(
                   onTap: () {
-                    ref.read(cartRepositoryProvider.notifier).addItem(
+                    ref.read(cartProvider).addItem(
                         dish: cartItem.dish!, dishName: cartItem.dish!.name!);
                   },
                   child: SvgPicture.asset(

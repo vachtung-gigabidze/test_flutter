@@ -10,9 +10,8 @@ class CartScreen extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final state = ref.watch(cartRepositoryProvider);
-    double? cost =
-        state.values.fold(.0, (t, e) => t! + (e.dish!.price! * e.qty!));
+    final cart = ref.watch(cartProvider);
+
     return Column(
       children: [
         Expanded(
@@ -22,9 +21,9 @@ class CartScreen extends ConsumerWidget {
             separatorBuilder: (context, index) => const SizedBox(
               height: 16,
             ),
-            itemCount: state.length,
+            itemCount: cart.state.length,
             itemBuilder: (context, index) =>
-                CartRow(cartItem: state.values.toList()[index]),
+                CartRow(cartItem: cart.state.values.toList()[index]),
           ),
         )),
         Padding(
@@ -39,7 +38,7 @@ class CartScreen extends ConsumerWidget {
                   borderRadius: BorderRadius.circular(10.0),
                 ))),
             child: Text(
-              'Оплатить $cost ₽',
+              'Оплатить ${cart.cost()} ₽',
               style: AppTypography.textText16MediumWhite,
             ),
           ),

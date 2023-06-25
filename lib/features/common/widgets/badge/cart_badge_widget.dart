@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:test_flutter/features/cart/providers/cart_provider.dart';
+import 'package:test_flutter/features/cart/providers/cart_repository.dart';
 
 /// Бейдж с количеством для корзины
 class CartBadgeWidget extends ConsumerWidget {
@@ -14,7 +15,7 @@ class CartBadgeWidget extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final cart = ref.watch(cartRepositoryProvider);
+    final cart = ref.watch(cartProvider).state;
     return Badge(
       label: Text("${cart.values.length}"),
       child: SvgPicture.asset(
