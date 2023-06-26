@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 
 /// названия из фигмы
@@ -52,6 +53,13 @@ class AppTypography {
     height: 1.25,
     fontWeight: FontWeight.w400,
   );
+  static const textText16RegularBlack = TextStyle(
+    fontFamily: 'SF Pro Display',
+    fontSize: 16.0,
+    height: 1.25,
+    fontWeight: FontWeight.w400,
+    color: Colors.black,
+  );
 
   static const textSmall14Bold = TextStyle(
     fontFamily: 'SF Pro Display',
@@ -85,6 +93,7 @@ class AppTypography {
     letterSpacing: 0.14,
     color: Color(0xff000000),
   );
+
   static const textText14RegularBlack = TextStyle(
     fontFamily: 'SF Pro Display',
     fontSize: 14,

@@ -49,12 +49,17 @@ class CategoryScreen extends ConsumerWidget {
                         height: 16,
                       ),
                       Expanded(
-                        child: GridView.count(
-                          crossAxisCount: 3,
-                          children: [
-                            for (final dish in snapshot.data!.dishes!)
-                              Dish(dish: dish)
-                          ],
+                        child: GridView.builder(
+                          gridDelegate:
+                              SliverGridDelegateWithFixedCrossAxisCount(
+                            crossAxisCount: 3,
+                            mainAxisExtent: 145,
+                          ),
+                          primary: false,
+                          shrinkWrap: false,
+                          itemCount: snapshot.data!.dishes!.length,
+                          itemBuilder: (context, index) =>
+                              Dish(dish: snapshot.data!.dishes![index]),
                         ),
                       )
                     ],

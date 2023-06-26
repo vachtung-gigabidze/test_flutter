@@ -47,32 +47,56 @@ class CartRow extends HookConsumerWidget {
                 ),
               ),
               Container(
-                margin: const EdgeInsets.fromLTRB(8, 14, 0, 14),
+                margin: const EdgeInsets.fromLTRB(8, 0, 0, 0),
                 height: double.infinity,
                 child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
-                      cartItem.dish!.name!,
-                      style: const TextStyle(
-                        fontFamily: 'SF Pro Display',
-                        fontSize: 14,
-                        fontWeight: FontWeight.w400,
-                        height: 1.0,
-                        letterSpacing: 0.14,
-                        color: Color(0xff000000),
+                    SizedBox(
+                      width: 150,
+                      child: Text(
+                        cartItem.dish!.name!,
+                        maxLines: 2,
+                        overflow: TextOverflow.ellipsis,
+                        textAlign: TextAlign.left,
+                        style: const TextStyle(
+                          fontFamily: 'SF Pro Display',
+                          fontSize: 14,
+                          fontWeight: FontWeight.w400,
+                          height: 1.0,
+                          letterSpacing: 0.14,
+                          color: Color(0xff000000),
+                        ),
                       ),
+                    ),
+                    const SizedBox(
+                      height: 4,
                     ),
                     RichText(
                       text: TextSpan(
-                        style: AppTypography.textText14RegularBlack,
+                        style: const TextStyle(
+                          fontFamily: 'SF Pro Display',
+                          fontSize: 14,
+                          fontWeight: FontWeight.w400,
+                          height: 1.0,
+                          letterSpacing: 0.14,
+                          color: Color(0x66000000),
+                        ),
                         children: [
                           TextSpan(
-                            text: '${cartItem.dish?.price ?? 0} ₽',
-                            style: AppTypography.textText14RegularBlack,
+                            text: '${cartItem.dish!.price} ₽',
+                            style: const TextStyle(
+                              fontFamily: 'SF Pro Display',
+                              fontSize: 14,
+                              fontWeight: FontWeight.w400,
+                              height: 1.0,
+                              letterSpacing: 0.14,
+                              color: Color(0xff000000),
+                            ),
                           ),
                           TextSpan(
-                            text: ' · ${cartItem.dish?.weight ?? 0}г',
+                            text: ' · ${cartItem.dish!.weight}г',
                           ),
                         ],
                       ),

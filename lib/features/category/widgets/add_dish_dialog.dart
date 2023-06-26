@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:test_flutter/assets/themes/text_style.dart';
 import 'package:test_flutter/features/cart/providers/cart_provider.dart';
 import 'package:test_flutter/features/category/models/dishes_entities.dart';
 
@@ -22,7 +23,7 @@ class AddDishDialog extends ConsumerWidget {
         child: Stack(children: [
           Center(
             child: Hero(
-              tag: dish.name!,
+              tag: dish.imageUrl!,
               child: Image.network(
                 width: 198,
                 height: 204,
@@ -82,17 +83,7 @@ class AddDishDialog extends ConsumerWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisSize: MainAxisSize.min,
           children: [
-            Text(
-              dish.name!,
-              style: const TextStyle(
-                fontFamily: 'SF Pro Display',
-                fontSize: 16,
-                fontWeight: FontWeight.w400,
-                height: 1.0,
-                letterSpacing: 0.16,
-                // color: Color(0xff000000),
-              ),
-            ),
+            Text(dish.name!, style: AppTypography.textText16RegularBlack),
             const SizedBox(
               height: 8,
             ),
@@ -104,7 +95,7 @@ class AddDishDialog extends ConsumerWidget {
                   fontWeight: FontWeight.w400,
                   height: 1.0,
                   letterSpacing: 0.14,
-                  // color: Color(0x66000000),
+                  color: Color(0x66000000),
                 ),
                 children: [
                   TextSpan(
@@ -115,7 +106,7 @@ class AddDishDialog extends ConsumerWidget {
                       fontWeight: FontWeight.w400,
                       height: 1.0,
                       letterSpacing: 0.14,
-                      // color: Color(0xff000000),
+                      color: Color(0xff000000),
                     ),
                   ),
                   TextSpan(
