@@ -14,7 +14,7 @@ class CartRow extends HookConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     CartItemDto dish = ref
         .watch(cartProvider)
-        .state
+        .cart
         .values
         .firstWhere((d) => d.dish!.name! == cartItem.dish!.name!);
     return SizedBox(
@@ -95,7 +95,9 @@ class CartRow extends HookConsumerWidget {
               children: [
                 GestureDetector(
                   onTap: () {
-                    ref.read(cartProvider).removeItem(cartItem.dish!.name!);
+                    ref
+                        .read(cartProvider.notifier)
+                        .removeItem(cartItem.dish!.name!);
                   },
                   child: SvgPicture.asset(
                     'assets/images/minus.svg',
@@ -106,7 +108,7 @@ class CartRow extends HookConsumerWidget {
                 Text('${dish.qty}', style: AppTypography.textText14MediumBlack),
                 GestureDetector(
                   onTap: () {
-                    ref.read(cartProvider).addItem(
+                    ref.read(cartProvider.notifier).addItem(
                         dish: cartItem.dish!, dishName: cartItem.dish!.name!);
                   },
                   child: SvgPicture.asset(

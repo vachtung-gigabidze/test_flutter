@@ -143,7 +143,9 @@ class AddDishDialog extends ConsumerWidget {
                 borderRadius: BorderRadius.circular(12),
               )),
           onPressed: () {
-            ref.read(cartProvider).addItem(dish: dish, dishName: dish.name!);
+            ref
+                .read(cartProvider.notifier)
+                .addItem(dish: dish, dishName: dish.name!);
             Navigator.pop(context);
           },
           child: const Text(

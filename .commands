@@ -1,1 +1,2 @@
 dart run build_runner build --delete-conflicting-outputs
+flutter pub add flutter_riverpod dev:custom_lint dev:riverpod_lint riverpod_annotation dev:build_runner dev:riverpod_generator
