@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/painting.dart';
 
 /// названия из фигмы
 /// LargeTitle 32
@@ -24,6 +23,11 @@ class AppTypography {
     height: 1.2,
     fontWeight: FontWeight.w700,
   );
+  static const textTitle18Regular = TextStyle(
+    fontFamily: 'SF Pro Display',
+    fontSize: 18.0,
+    fontWeight: FontWeight.w500,
+  );
 
   static const textSubtitle18Medium = TextStyle(
     fontFamily: 'SF Pro Display',
@@ -35,7 +39,7 @@ class AppTypography {
   static const textText16Medium = TextStyle(
     fontFamily: 'SF Pro Display',
     fontSize: 16.0,
-    height: 1.1,
+    // height: 1.1,
     letterSpacing: 0.1,
     fontWeight: FontWeight.w500,
   );
@@ -108,6 +112,14 @@ class AppTypography {
     fontWeight: FontWeight.w400,
     height: 1.0,
     letterSpacing: 0.14,
+  );
+  static const textText14Description = TextStyle(
+    fontFamily: 'SF Pro Display',
+    fontSize: 14,
+    fontWeight: FontWeight.w400,
+    height: 1.0,
+    letterSpacing: 0.14,
+    color: Color(0xA6000000),
   );
 
   static const textButton = TextStyle(

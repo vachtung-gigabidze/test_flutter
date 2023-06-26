@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:test_flutter/features/common/constants/app_sizes.dart';
 
@@ -16,6 +17,11 @@ class MaterialAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
+      toolbarHeight: 57,
+      systemOverlayStyle: const SystemUiOverlayStyle(
+        statusBarColor: Colors.white,
+        statusBarIconBrightness: Brightness.dark,
+      ),
       automaticallyImplyLeading: true,
       title: SizedBox(
         // width: double.infinity,
@@ -52,14 +58,14 @@ class MaterialAppBar extends StatelessWidget implements PreferredSizeWidget {
                     ),
                   ),
                   Text(
-                    '20 Июля, 2023',
+                    '26 Июля, 2023',
                     style: TextStyle(
                       fontFamily: 'SF Pro Display',
                       fontSize: 14,
                       fontWeight: FontWeight.w400,
                       height: 1.15,
                       letterSpacing: 0.14,
-                      // color: Color(0x7f000000),
+                      color: Color(0x7f000000),
                     ),
                   ),
                 ],

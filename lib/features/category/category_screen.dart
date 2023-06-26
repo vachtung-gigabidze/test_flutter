@@ -48,9 +48,9 @@ class CategoryScreen extends ConsumerWidget {
                       Expanded(
                         child: GridView.builder(
                           gridDelegate:
-                              SliverGridDelegateWithFixedCrossAxisCount(
+                              const SliverGridDelegateWithFixedCrossAxisCount(
                             crossAxisCount: 3,
-                            mainAxisExtent: 145,
+                            mainAxisExtent: 160,
                           ),
                           primary: false,
                           shrinkWrap: false,

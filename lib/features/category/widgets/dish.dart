@@ -42,6 +42,9 @@ class Dish extends StatelessWidget {
               ),
             ),
           ),
+          const SizedBox(
+            height: 5,
+          ),
           SizedBox(
             width: 109,
             child: Text(
@@ -51,6 +54,9 @@ class Dish extends StatelessWidget {
               overflow: TextOverflow.ellipsis,
               textAlign: TextAlign.left,
             ),
+          ),
+          const SizedBox(
+            height: 14,
           ),
         ],
       ),

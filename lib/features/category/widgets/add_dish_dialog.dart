@@ -90,23 +90,27 @@ class AddDishDialog extends ConsumerWidget {
                 children: [
                   TextSpan(
                     text: '${dish.price} ₽',
+                    style: AppTypography.textText14RegularBlack,
+                  ),
+                  TextSpan(
+                    text: ' · ${dish.weight}г',
                     style: const TextStyle(
                       fontFamily: 'SF Pro Display',
                       fontSize: 14,
                       fontWeight: FontWeight.w400,
                       height: 1.0,
                       letterSpacing: 0.14,
-                      color: Color(0xff000000),
+                      color: Colors.black38,
                     ),
-                  ),
-                  TextSpan(
-                    text: ' · ${dish.weight}г',
                   ),
                 ],
               ),
             ),
             AppSizes.sizedBoxH8,
-            Text(dish.description!),
+            Text(
+              dish.description!,
+              style: AppTypography.textText14Description,
+            ),
           ],
         ),
       ),
@@ -119,7 +123,7 @@ class AddDishDialog extends ConsumerWidget {
           style: ElevatedButton.styleFrom(
               fixedSize: const Size(311, 48),
               shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(12),
+                borderRadius: BorderRadius.circular(AppSizes.radiusButton),
               )),
           onPressed: () {
             ref
@@ -130,6 +134,7 @@ class AddDishDialog extends ConsumerWidget {
           child: const Text(
             'Добавить в корзину',
             textAlign: TextAlign.center,
+            style: AppTypography.textText16Medium,
           ),
         )
       ],

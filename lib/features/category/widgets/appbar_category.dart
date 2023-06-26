@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
+import 'package:test_flutter/assets/themes/text_style.dart';
 import 'package:test_flutter/features/navigation/app_router.dart';
 
 class AppBarCategory extends StatelessWidget implements PreferredSizeWidget {
@@ -24,7 +25,13 @@ class AppBarCategory extends StatelessWidget implements PreferredSizeWidget {
           fit: BoxFit.scaleDown,
         ),
       ),
-      title: SizedBox(height: 44, child: Center(child: Text(title))),
+      title: SizedBox(
+          height: 44,
+          child: Center(
+              child: Text(
+            title,
+            style: AppTypography.textTitle18Regular,
+          ))),
       actions: [
         Padding(
           padding: const EdgeInsets.only(right: 16.0),

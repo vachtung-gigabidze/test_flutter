@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 class AppSizes {
   /// размеры элементов
   static const double radiusCard = 10;
-  static const double radiusButton = 10;
+  static const double radiusButton = 12;
 
   /// частые отступы
   static const sizedBoxW4 = SizedBox(width: 4);
