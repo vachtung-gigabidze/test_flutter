@@ -102,6 +102,13 @@ class AppTypography {
     letterSpacing: 0.14,
     color: Color(0xff000000),
   );
+  static const textText14Regular = TextStyle(
+    fontFamily: 'SF Pro Display',
+    fontSize: 14,
+    fontWeight: FontWeight.w400,
+    height: 1.0,
+    letterSpacing: 0.14,
+  );
 
   static const textButton = TextStyle(
     fontFamily: 'SF Pro Display',

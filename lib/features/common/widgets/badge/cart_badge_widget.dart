@@ -16,6 +16,7 @@ class CartBadgeWidget extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final cart = ref.watch(cartProvider).cart;
     return Badge(
+      isLabelVisible: cart.values.isNotEmpty,
       label: Text("${cart.values.length}"),
       child: SvgPicture.asset(
         'assets/images/bag.svg',

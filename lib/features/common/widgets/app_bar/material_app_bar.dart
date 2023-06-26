@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:test_flutter/features/common/constants/app_sizes.dart';
 
 class MaterialAppBar extends StatelessWidget implements PreferredSizeWidget {
   final Widget? actionButton;
@@ -34,9 +35,7 @@ class MaterialAppBar extends StatelessWidget implements PreferredSizeWidget {
                 ),
               ),
             ),
-            const SizedBox(
-              width: 4,
-            ),
+            AppSizes.sizedBoxW4,
             const SizedBox(
               height: double.infinity,
               child: Column(

@@ -3,7 +3,8 @@ import 'package:flutter/material.dart';
 /// Часто используемые размеры, значения, маленькие виджеты
 class AppSizes {
   /// размеры элементов
-  static const double radiusCard = 12;
+  static const double radiusCard = 10;
+  static const double radiusButton = 10;
 
   /// частые отступы
   static const sizedBoxW4 = SizedBox(width: 4);
@@ -16,10 +17,6 @@ class AppSizes {
   static const sizedBoxH12 = SizedBox(height: 12);
   static const sizedBoxH16 = SizedBox(height: 16);
   static const sizedBoxH24 = SizedBox(height: 24);
-
-  /// отступ под боттомшит чтобы прокрутить контент под ним
-  // static const cupertinoIndentationUnderBottomSheet = 120.0;
-  static const materialIndentationUnderBottomSheet = 100.0;
 
   AppSizes._();
 }

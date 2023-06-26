@@ -4,6 +4,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:test_flutter/assets/themes/text_style.dart';
 import 'package:test_flutter/features/cart/models/cart_entity.dart';
 import 'package:test_flutter/features/cart/providers/cart_provider.dart';
+import 'package:test_flutter/features/common/constants/app_sizes.dart';
 
 class CartRow extends HookConsumerWidget {
   const CartRow({super.key, required this.cartItem});
@@ -70,9 +71,7 @@ class CartRow extends HookConsumerWidget {
                         ),
                       ),
                     ),
-                    const SizedBox(
-                      height: 4,
-                    ),
+                    AppSizes.sizedBoxH4,
                     RichText(
                       text: TextSpan(
                         style: const TextStyle(

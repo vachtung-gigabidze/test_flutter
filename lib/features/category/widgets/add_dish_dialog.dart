@@ -4,6 +4,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:test_flutter/assets/themes/text_style.dart';
 import 'package:test_flutter/features/cart/providers/cart_provider.dart';
 import 'package:test_flutter/features/category/models/dishes_entities.dart';
+import 'package:test_flutter/features/common/constants/app_sizes.dart';
 
 class AddDishDialog extends ConsumerWidget {
   const AddDishDialog({super.key, required this.dish});
@@ -51,9 +52,7 @@ class AddDishDialog extends ConsumerWidget {
                       fit: BoxFit.scaleDown,
                     ),
                   ),
-                  const SizedBox(
-                    width: 8,
-                  ),
+                  AppSizes.sizedBoxW8,
                   GestureDetector(
                     onTap: () => Navigator.pop(context),
                     child: Container(
@@ -84,19 +83,10 @@ class AddDishDialog extends ConsumerWidget {
           mainAxisSize: MainAxisSize.min,
           children: [
             Text(dish.name!, style: AppTypography.textText16RegularBlack),
-            const SizedBox(
-              height: 8,
-            ),
+            AppSizes.sizedBoxH8,
             RichText(
               text: TextSpan(
-                style: const TextStyle(
-                  fontFamily: 'SF Pro Display',
-                  fontSize: 14,
-                  fontWeight: FontWeight.w400,
-                  height: 1.0,
-                  letterSpacing: 0.14,
-                  color: Color(0x66000000),
-                ),
+                style: AppTypography.textText14RegularBlack,
                 children: [
                   TextSpan(
                     text: '${dish.price} ₽',
@@ -115,9 +105,7 @@ class AddDishDialog extends ConsumerWidget {
                 ],
               ),
             ),
-            const SizedBox(
-              height: 8,
-            ),
+            AppSizes.sizedBoxH8,
             Text(dish.description!),
           ],
         ),

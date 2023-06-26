@@ -4,6 +4,7 @@ import 'package:test_flutter/features/categories/models/category.dart';
 import 'package:test_flutter/features/category/providers/dishes_provider.dart';
 import 'package:test_flutter/features/category/widgets/dish.dart';
 import 'package:test_flutter/features/category/widgets/tag.dart';
+import 'package:test_flutter/features/common/constants/app_sizes.dart';
 import 'package:test_flutter/features/common/widgets/loader/material_loader.dart';
 
 class CategoryScreen extends ConsumerWidget {
@@ -36,18 +37,14 @@ class CategoryScreen extends ConsumerWidget {
                             shrinkWrap: true,
                             separatorBuilder:
                                 (BuildContext context, int index) =>
-                                    const SizedBox(
-                                      width: 8,
-                                    ),
+                                    AppSizes.sizedBoxW8,
                             scrollDirection: Axis.horizontal,
                             itemBuilder: (context, index) {
                               return Tag(
                                   tag: allTags![index], active: index == 0);
                             }),
                       ),
-                      const SizedBox(
-                        height: 16,
-                      ),
+                      AppSizes.sizedBoxH16,
                       Expanded(
                         child: GridView.builder(
                           gridDelegate:

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:test_flutter/features/categories/models/category.dart';
 import 'package:test_flutter/features/categories/widgets/category_card.dart';
+import 'package:test_flutter/features/common/constants/app_sizes.dart';
 import 'package:test_flutter/utils/typedefs.dart';
 
 class CategoriesBuilder extends StatelessWidget {
@@ -22,7 +23,7 @@ class CategoriesBuilder extends StatelessWidget {
       child: RefreshIndicator(
         onRefresh: refreshPlaces,
         child: ListView.separated(
-          separatorBuilder: (context, index) => const SizedBox(height: 8),
+          separatorBuilder: (context, index) => AppSizes.sizedBoxH8,
           itemBuilder: (_, index) => CategoryCard(
             category: data[index],
             goCategoryDetails: goCategoryDetails,
