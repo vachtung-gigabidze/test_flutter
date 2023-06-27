@@ -15,15 +15,14 @@ class CategoryScreen extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final dishes = ref.watch(dishesProvider.future);
-
+    final tag = ref.watch(tagProvider);
     return Padding(
-      padding: const EdgeInsets.all(16.0),
+      padding: const EdgeInsets.fromLTRB(16, 8, 16, 0),
       child: SafeArea(
         child: FutureBuilder(
             future: dishes,
             builder: (context, snapshot) {
               if (snapshot.connectionState == ConnectionState.done) {
-                // allTags
                 if (snapshot.hasData) {
                   final allTags = snapshot.data?.allTags();
                   return Column(
@@ -33,15 +32,15 @@ class CategoryScreen extends ConsumerWidget {
                         height: 35,
                         child: ListView.separated(
                             itemCount: allTags?.length ?? 0,
-                            // padding: const EdgeInsets.all(8),
                             shrinkWrap: true,
                             separatorBuilder:
                                 (BuildContext context, int index) =>
                                     AppSizes.sizedBoxW8,
                             scrollDirection: Axis.horizontal,
                             itemBuilder: (context, index) {
-                              return Tag(
-                                  tag: allTags![index], active: index == 0);
+                              return TagButton(
+                                  tag: allTags![index],
+                                  active: tag == allTags[index]);
                             }),
                       ),
                       AppSizes.sizedBoxH16,
@@ -54,9 +53,13 @@ class CategoryScreen extends ConsumerWidget {
                           ),
                           primary: false,
                           shrinkWrap: false,
-                          itemCount: snapshot.data!.dishes!.length,
-                          itemBuilder: (context, index) =>
-                              Dish(dish: snapshot.data!.dishes![index]),
+                          itemCount: snapshot.data!.dishes
+                              ?.where((d) => d.tags!.contains(tag))
+                              .length,
+                          itemBuilder: (context, index) => Dish(
+                              dish: (snapshot.data!.dishes
+                                  ?.where((d) => d.tags!.contains(tag))
+                                  .toList())![index]),
                         ),
                       )
                     ],
