@@ -58,7 +58,7 @@ class CartRepository {
 }
 
 class CartRepositoryNotifier extends StateNotifier<CartRepository> {
-  CartRepositoryNotifier() : super(CartRepository({}));
+  CartRepositoryNotifier() : super(const CartRepository({}));
 
   void addItem({required DishDto dish, required String dishName}) {
     if (state.cart.containsKey(dishName)) {

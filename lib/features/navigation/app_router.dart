@@ -5,7 +5,7 @@ import 'package:test_flutter/features/cart/cart_screen.dart';
 import 'package:test_flutter/features/categories/categories_screen.dart';
 import 'package:test_flutter/features/categories/models/category.dart';
 import 'package:test_flutter/features/category/category_screen.dart';
-import 'package:test_flutter/features/category/widgets/appbar_category.dart';
+import 'package:test_flutter/features/category/widgets/app_bar_category.dart';
 import 'package:test_flutter/features/search/search_screen.dart';
 import 'package:go_router/go_router.dart';
 

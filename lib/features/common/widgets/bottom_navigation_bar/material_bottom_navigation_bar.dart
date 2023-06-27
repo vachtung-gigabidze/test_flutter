@@ -10,12 +10,7 @@ import 'package:test_flutter/features/navigation/app_router.dart';
 import 'package:go_router/go_router.dart';
 
 class MaterialBottomNavigationBar extends ConsumerWidget {
-  //final int currentIndex;
-  //final ValueSetter<int> onTap;
-
   const MaterialBottomNavigationBar({
-    //required this.currentIndex,
-    //required this.onTap,
     Key? key,
   }) : super(key: key);
 

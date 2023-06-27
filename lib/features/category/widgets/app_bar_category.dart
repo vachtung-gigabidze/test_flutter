@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:go_router/go_router.dart';
 import 'package:test_flutter/assets/themes/text_style.dart';
-import 'package:test_flutter/features/navigation/app_router.dart';
+import 'package:test_flutter/features/category/widgets/app_back_button.dart';
 
 class AppBarCategory extends StatelessWidget implements PreferredSizeWidget {
   final String title;
@@ -16,15 +14,7 @@ class AppBarCategory extends StatelessWidget implements PreferredSizeWidget {
   Widget build(BuildContext context) {
     return AppBar(
       centerTitle: true,
-      leading: GestureDetector(
-        onTap: () => context.go(AppRouter.root),
-        child: SvgPicture.asset(
-          'assets/images/back.svg',
-          width: 6,
-          height: 12,
-          fit: BoxFit.scaleDown,
-        ),
-      ),
+      leading: const AppBackButton(),
       title: SizedBox(
           height: 44,
           child: Center(

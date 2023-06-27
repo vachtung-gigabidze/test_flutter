@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:test_flutter/features/app/app.dart';
@@ -18,10 +19,12 @@ class Logger extends ProviderObserver {
     Object? newValue,
     ProviderContainer container,
   ) {
-    print('''
+    if (kDebugMode) {
+      print('''
 {
   "provider": "${provider.name ?? provider.runtimeType}",
   "newValue": "$newValue"
 }''');
+    }
   }
 }

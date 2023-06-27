@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:test_flutter/assets/themes/themes.dart';
-// import 'package:test_flutter/features/platform/factory/platform_widget_factory.dart';
 import 'package:test_flutter/features/navigation/app_router.dart';
 
 class App extends StatefulWidget {
@@ -21,14 +20,7 @@ class AppState extends State<App> {
     return MaterialApp.router(
       routerConfig: AppRouter.router,
       debugShowCheckedModeBanner: false,
-      // initialRoute: AppRouter.root,
-      // onGenerateRoute: (settings) => AppRouter.generateRoute(settings),
-      // localizationsDelegates: null,
-      //  supportedLocales: const [Locale('ru', 'RU')],
-      //  locale: const Locale('ru'),
       theme: AppTheme.lightTheme,
-
-      // darkTheme: AppTheme.darkTheme,
     );
   }
 }

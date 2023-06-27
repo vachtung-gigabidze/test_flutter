@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:test_flutter/assets/themes/text_style.dart';
-// import 'package:test_flutter/features/cart/models/cart_entity.dart';
 import 'package:test_flutter/features/cart/providers/cart_provider.dart';
 import 'package:test_flutter/features/cart/widgets/cart_row.dart';
 import 'package:test_flutter/features/common/constants/app_sizes.dart';
